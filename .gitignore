@@ -14,3 +14,4 @@ yarn-error.log
 project.db
 yarn.lock
 package-lock.json
+settings.py
