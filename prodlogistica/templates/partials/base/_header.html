@@ -1,0 +1,53 @@
+{% load cms_tags menu_tags sekizai_tags %}
+<div class="spacerH"></div>
+<header class="header container-fluid">
+  <div class="preloader"></div>
+  <div class="container">
+    <div class="header-top grid">
+
+      <div class="logo">
+        <a href="/">
+          <img src="{{ STATIC_URL }}img/logo.svg" alt=""/>
+        </a>
+      </div>
+
+      <div class="links">
+        <div class="feedback">
+          <p><i class="i-phone"></i>+7 495 212‑20-80</p>
+          <p><i class="i-mail"></i>напишите нам на email</p>
+        </div>
+
+        <div class="search">
+          <a href="#" class="btn-search">
+            <i class="i-search"></i>
+          </a>
+        </div>
+
+        <div class="lang">
+          <a href="" class="lang-btn"><i class="i-globe"></i>
+            <ul>
+              <li class="active">рус</li>
+              <li>en</li>
+            </ul>
+            <i class="i-down-open"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="header-main">
+    <div class="container grid" data-slideout-ignore>
+      <div class="sm-hidden">
+        <button class="toggle-button sld"><i class='i-menu'></i></button>
+        <img src="{{ STATIC_URL }}img/logo-clear.svg" alt=""/>
+      </div>
+      <nav class="menu">
+        <ul>
+          {% show_menu 0 100 100 100 %}
+        </ul>
+      </nav>
+      <a href="#" class="btn-feed">обратная связь</a>
+    </div>
+  </div>
+</header>

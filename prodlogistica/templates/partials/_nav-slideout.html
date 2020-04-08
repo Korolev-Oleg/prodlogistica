@@ -1,0 +1,13 @@
+{% load cms_tags menu_tags sekizai_tags %}
+<nav id="menu">
+  <div class="toggles">
+    <a href="#" class='lang'>Русский</a>
+    <button class="close-button"><i class='i-cancel'></i></button>        
+  </div>
+    <ul>
+{#    {% for item in list.nav %}#}
+{#      <li class='nav-links'><a href={{ item.link }} >{{ item.titl }}</a></li>#}
+{#    {% endfor %}#}
+        {% show_menu 0 100 100 100 %}
+    </ul>
+</nav>

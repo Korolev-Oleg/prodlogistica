@@ -1,0 +1,42 @@
+{% load cms_tags menu_tags sekizai_tags %}
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8"/>
+    <title>{% block title %}Продлогистика ЮГ{% endblock title %}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <meta http-equiv="cleartype" content="on">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="theme-color" content="#fff"/>
+    <meta name="MobileOptimized" content="320">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no"/>
+    <link rel="shortcut icon" href="{{ STATIC_URL }}favicon.ico" type="image/x-icon">
+    <link rel="icon" href="{{ STATIC_URL }}favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" media="all" href="{{ STATIC_URL }}css/app.css"/>
+
+    {% include "partials/_media-tags.html" %}
+    {% render_block "css" %}
+    {% block head %}{% endblock %}
+  </head>
+  <body>
+
+    <!-- BEGIN content -->
+    {% cms_toolbar %}
+    {% include "partials/_nav-slideout.html" %}
+    <div class="content" id="content">
+      {% include "partials/base/_header.html" %}
+      {% block content %}{% endblock %}
+      {% include "partials/base/_footer.html" %}
+    </div>
+    <!-- END content -->
+
+    <!-- BEGIN scripts -->
+    {% render_block "js" %}
+    <script type="text/javascript" src="{{ STATIC_URL }}js/app.js"></script>
+    <!-- END scripts -->
+
+  </body>
+</html>

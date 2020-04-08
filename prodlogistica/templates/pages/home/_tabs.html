@@ -1,0 +1,114 @@
+<section class="tabs container-fluid">
+  <div class="container">
+    <div class="wrapper grid">
+      <div class="info">
+        <div class="tabs-slider grid">
+          <div class="about grid">
+            <img class="pic-about" src="{{ STATIC_URL }}img/pic-about.png"alt=""/>
+            <h2>
+              Продуктовая компания с 2014 года
+            </h2>
+            <p class="subtitle">
+              Профессиональный поставщик продуктов питания для школ, отелей, предприятий пищевой промышленности, столовых. Ассортимент компании включает более 3000 наименований продуктов питания. В нем представлены все группы продуктов, используемые в сегменте HoReCa.
+              При сотрудничестве с нами мы гарантируем:
+            </p>
+            <ul class="achievements">
+              <li><i class="i-right"></i>
+                Высокие стандарты работы
+              </li>
+              <li><i class="i-right"></i>
+                Своевременную доставку 7 раз в неделю
+              </li>
+              <li><i class="i-right"></i>
+                Персонального менеджера по продажам
+              </li>
+              <li><i class="i-right"></i>
+                Честные цены
+              </li>
+            </ul>
+            <a href="/o-kompanii" class="more">больше <i class="i-right-open"></i></a>
+          </div>
+
+          {# START CONTACTS TAB #}
+          <div class="contacts grid">
+            <div class="profiles grid">
+              {% for manager in managers %}
+              <div class='profile'>
+                <div class="photo">
+                  <img src="{{ manager.photo }}" alt="">
+                  <div class="name">
+                    <p>{{ manager.name }}</p>
+                  </div>
+                </div>
+                <p class="departament">{{ manager.departament }}</p>
+                <div class="contact-data">
+                  <p class="phone">{{ manager.contacts }}</p>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+
+            <ul class="address-block">
+              <li><i class="i-right"></i>
+                Адрес: Ступинский пр., 1А, стр. 1, Москва
+              </li>
+              <li><i class="i-phone"></i>
+                Телефон: +7 495 212‑20-80
+              </li>
+              <li><i class="i-mail-alt"></i>
+                Почта: prodlogistica@mail.ru
+              </li>
+            </ul>
+          </div>
+          {# END CONTACTS TAB #}
+          <div id="map" style="width: 100%; height: 315px; padding-right: 10px;" data-slideout-ignore>
+          </div>
+        </div>
+      </div>
+      <div class="news-block grid">
+        <div class="news-title">
+          <div class="separator"></div>
+          <p>новости компании</p>
+        </div>
+
+        <div class="news-item grid">
+{#          <a href="#" class="news-pic"><img src="{{ STATIC_URL }}img/tabs-home/news-1.png" alt=""/></a>#}
+          <div class="date">
+{#            <i class="i-calendar"></i>#}
+            <p></p>
+          </div>
+          <div class="title">
+{#            <p>новостей пока нет.</p>#}
+          </div>
+{#          <a href="#" class="more">больше <i class="i-right-open"></i></a>#}
+        </div>
+
+        <div class="news-item grid">
+          <a href="#" class="news-pic"><img src="" alt=""/></a>
+          <div class="date">
+{#            <i class="i-calendar"></i>#}
+{#            <p>{{ new.date }}</p>#}
+          </div>
+          <div class="title">
+{#            <p>новостей пока нет</p>#}
+          </div>
+{#          <a href="#" class="more">больше <i class="i-right-open"></i></a>#}
+        </div>
+
+        <div class="news-item grid">
+          <a href="#" class="news-pic"><img src="" alt=""/></a>
+          <div class="date">
+{#            <i class="i-calendar"></i>#}
+{#            <p>{{ new.date }}</p>#}
+          </div>
+          <div class="title">
+{#            <p>новостей пока нет</p>#}
+          </div>
+{#          <a href="#" class="more">больше <i class="i-right-open"></i></a>#}
+        </div>
+
+{#        <a href="#" class="all-news">Все новости</a>#}
+      </div>
+    </div>
+  </div>
+</section>
