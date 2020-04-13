@@ -1,7 +1,9 @@
+{% load cms_tags %}
+
 <section class="banner grid" data-image-src="{{ STATIC_URL }}img/banner-0.png" data-slideout-ignore>
   <div class="banner-content grid">
-    <h1 data-depth="0.2">Продлогистика юг</h1>
+    <h1 data-depth="0.2">{% placeholder "title" %}Продлогистика юг</h1>
     <div data-depth="0.6" class="separator"></div>
-    <p data-depth="0.8">Вкусно, быстро, доступно!</p>
+    <p data-depth="0.8">{% placeholder "sub_title" %}Вкусно, быстро, доступно!</p>
   </div>
 </section>

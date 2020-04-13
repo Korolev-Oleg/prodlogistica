@@ -1,0 +1,142 @@
+.team
+    margin-top: 70px
+    grid-template-columns: repeat(4, 1fr)
+    background: white
+    // grid-template-rows: repeat(3, 1fr)
+
+    .title
+        text-transform: uppercase
+        line-height: 40px
+        grid-column: 1/4 
+        font-size: 24px
+        font-family: Raleway-ExtraBold
+        color: #333333
+
+    +r($xlm)
+        &::nth-child(4)
+            grid-row: 2
+            background-color: red
+.team-tiles
+    grid-template-columns: repeat(3, 1fr)
+    +r($xlm)
+        grid-template-columns: repeat(2, 1fr)
+
+    
+
+.team
+    grid-template-columns: repeat(4, 1fr)
+    +r($xlm)
+        grid-template-columns: repeat(3, 1fr)
+    +r($lg)
+        grid-template-columns: repeat(2, 1fr)
+    +r($md)
+        grid-template-columns: repeat(1, 1fr)
+        text-align: center
+        & *
+            margin: auto
+    .name
+        text-transform: uppercase
+        margin-top: 15px
+        font-size: 15px
+        font-family: Raleway-SemiBold
+        color: #252525
+
+    .employee-position
+        line-height: 25px
+        font-family: Open Sans RegularItalic
+
+    .photo
+        overflow: hidden
+        margin-right: $gutter
+        max-height: 296px
+        min-height: 296px
+        max-width: 263px
+
+        +r($lg)
+            margin-right: 0
+        img
+            max-height: 296px
+            filter: none
+            transition: .2s
+
+        .contacts
+            position: relative
+            top: 0
+            padding: 5px
+            background: $accent
+            height: 55px
+            width: 100%
+            transition: .2s
+            text-align: center
+            opacity: 0
+
+            p
+                height: 100%
+            
+            i
+                margin: auto
+                float: left
+                color: white
+                font-family: Open Sans RegularItalic
+                &::before
+                    margin-right: 10px 
+            
+            
+        &:hover
+            content: ''
+            .contacts
+                top: -60px
+                opacity: 0.92
+                transition: .2s
+
+            img
+                filter: brightness(0.7) blur(1px)
+                transition: .2s
+                
+    .separator
+        +r($xl)
+            margin-bottom: 15px
+
+    .title-block
+        grid-column: 1/4
+        +r($xlm)
+            grid-column: 1/-1
+
+    .hiring-title
+        grid-column: 4/5
+        grid-row: 1
+
+        +r($xlm)
+            grid-column: 1/-1
+            grid-row: 3
+            margin-top: 100px
+
+        +r($md)
+            grid-row: 6
+    
+
+.hiring-baner
+    // grid-column: 2
+    +r($xlm)
+        grid-row: 4
+        grid-column: 1
+
+    +r($md)
+        grid-row: 7
+
+    .wrap
+        text-align: center
+        padding: 45px 0
+        max-width: 245px
+        line-height: 15px
+        & *
+            margin-bottom: 20px
+
+        .btn-feed
+            position: relative
+            top: 28px
+            padding: 15px 27px
+
+        .content
+            font-family: Open Sans Regular
+            font-size: 12px

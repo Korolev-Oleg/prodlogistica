@@ -1,0 +1,31 @@
+$duration: 1s
+.clients
+    background: white
+    .title
+        color: #333333
+    padding: 130px 0 80px
+    text-align: center
+    & * 
+        margin: auto
+    .slide-item
+        width: 166px!important
+        height: 120px!important
+        display: flex!important
+        height: 178px
+        overflow: hidden
+        margin-top: 50px
+        img
+            width: 190px
+            transition: .4s
+            filter: opacity(1)
+        &:hover
+            img
+                transition: .1s
+                width: 160px
+                filter: opacity(.8)
+
+    .slick-center img
+        transition: .3s
+        width: 190px
+    .slick-arrow
+        display: none!important

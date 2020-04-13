@@ -1,0 +1,30 @@
+{
+  "name": "gulp-learn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "babel-loader": "^8.1.0",
+    "gulp": "^4.0.2",
+    "gulp-fontmin": "^0.7.4",
+    "gulp-sass": "^4.0.2",
+    "node-sass": "^4.13.1",
+    "webpack": "^4.42.1",
+    "webpack-stream": "^5.2.1"
+  },
+  "dependencies": {
+    "bootstrap": "^4.4.1",
+    "jquery": "^3.5.0",
+    "jquery-migrate": "^3.2.0",
+    "jquery-parallax.js": "^1.5.0",
+    "slick-carousel": "^1.8.1",
+    "slideout": "^1.0.1"
+  }
+}

@@ -1,0 +1,232 @@
+$navtop-mg-top: 21px
+
+.header
+    position: fixed
+    z-index: 100
+    transition: top .4s
+    top: 0
+
+    .preloader
+        height: 200vh
+        width: 100vw
+        display: inline
+        position: absolute
+        z-index: 101
+        background: #fff
+
+.slideup
+    +rmin($xl)
+        transition: top .3s
+        top: -120px
+
+.spacerH
+    +r($lg)
+        height: 64px!important
+
+
+
+header
+    background: white
+    display: grid
+    font-family: 'Open Sans light'
+    .header-top
+        grid-template-columns: 1fr 2fr 1fr
+        border-bottom: #eee solid 1px
+        +r($lg)
+            display: none
+        .logo
+            grid-column: 1 / -1
+            margin: 42px 0 $navtop-mg-top
+            a img
+                width: 221px
+
+        .links
+            grid-column: -1
+            margin: 42px 0 $navtop-mg-top
+            
+            div
+                float: left
+                p, a, i, ul
+                    float: left
+            
+            .feedback
+                p:nth-child(1)
+                    border-right: #eee solid 1px
+                p
+                    padding: 23px 27px 17px
+                    
+                    i
+                        margin: 0 8px
+
+            .search
+                margin: 11px 27px 0 0
+
+                    
+            .lang
+                margin-top: 21px
+                ul li
+                    font-family: "Open Sans Light"
+                    color: #777
+                    display: none
+                i:nth-child(1)
+                    border-right: #eee solid 1px
+                    margin: 0 10px
+                    padding: 0 10px
+                .i-down-open
+                    font-size: 9px
+                    color: #777
+                    margin: 3px 0 0 5px!important
+                    padding: 0!important
+                .lang-btn
+                    transition: padding 0.3s
+                    &:hover
+                        position: relative
+                        padding-bottom: 19px 
+    
+
+.header-main
+    background-color: white
+    z-index: 100
+    left: 0
+    .container
+        grid-template-columns: 3fr 1fr
+        +r($lg)
+            display: block
+        nav
+            padding-left: 9px
+            grid-column: 1 / 2
+            +r($lg)
+                display: none
+            a
+                font-family: "Raleway-Bold"
+                float: left
+                padding: 25px 0 19px
+                width: 115px
+                text-align: center
+                color: #333
+                &:hover
+                    background: darken(#fff, 5)
+            ul li:nth-child(1)
+                margin: 0 -16px
+        .btn-feed
+            align-self: center!important
+            grid-column: -1
+            margin-right: -9px
+            +r($lg)
+                display: none
+        .selected
+            a
+                color: $accent
+    .sm-hidden
+        display: none
+        +r($lg)
+            display: block
+        .toggle-button
+            position: absolute
+            z-index: 10
+            height: 64px
+            background: none
+            font-size: 20px
+            i
+                color: $dark
+            &::active
+                background: none
+        img
+            padding: 10px 0
+            height: 60px
+            margin-top: auto
+            width: 100%
+            position: relative
+    &.fixed
+        width: 100vw
+        position: fixed
+        top: 0
+        nav
+            padding-left: 0
+        .btn-feed
+            margin-right: 0
+
+
+
+// slideout
+.slideout-menu
+    position: fixed
+    left: 0
+    top: 0
+    bottom: 0
+    right: 0
+    z-index: 10
+    width: 256px
+    overflow-y: scroll
+    -webkit-overflow-scrolling: touch
+    display: none
+
+
+.slideout-menu-left 
+    left: 0
+
+
+.slideout-menu-right 
+    right: 0
+
++r($lg)
+    .header-main
+        position: fixed
+        width: 100vw
+
+    // .slideout-panel 
+    //     z-index: 1000000000000000
+    //     will-change: transform
+        // background-color: #FFF
+        // min-height: 100vh
+
+
+.slideout-open,
+.slideout-open body,
+.slideout-open .slideout-panel 
+    overflow: hidden
+
+
+.slideout-open .slideout-menu 
+    display: block
+
+// +rmin(780)
+//     .slideout-panel 
+//         margin-left: 256px
+    
+//     .slideout-menu 
+//         display: block
+    
+//     .btn-hamburger 
+//         display: none
+
+#menu
+    z-index: 0
+    ul
+        li
+            line-height: 44px
+            list-style: none!important
+            text-align: center
+            border-bottom: solid 1px #eee
+            &::hover
+                background-color: #eee
+            a
+                color: $dark
+                width: 100%
+                padding: 14px 84px 15px
+            .active
+                color: $accent
+    .toggles
+        padding: 14px 25px
+        .lang
+            color: $dark
+            text-decoration: underline
+            text-transform: none
+            font-family: Open Sans light
+        .close-button
+            margin-left: auto
+            float: right
+            background: none
+            font-size: 20px
+            i
+                color: $dark

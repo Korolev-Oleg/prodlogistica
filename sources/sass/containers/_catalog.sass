@@ -1,0 +1,65 @@
+$debugMode: false
+section.catalog
+    background: $dark
+    .container
+        padding: 64px 0
+        +rmin(1200)
+            @if $debugMode
+                padding-bottom: 1000px
+        +r($lg)
+            .catalog-tiles 
+                grid-template-columns: repeat( 3, 162px ) !important
+        +r($sm)
+            .catalog-tiles 
+                grid-template-columns: repeat( 2, 162px ) !important
+
+
+             
+        .heading
+            color: white
+            text-align: center
+            line-height: 32px
+            padding-bottom: 30px 
+            .services-title
+                font-family: Raleway-Bold
+                font-size: 30px
+            .services-subtitle
+                font-family: Raleway-SemiBold
+                text-transform: uppercase
+            .separator
+                margin: auto
+
+        .catalog-tiles 
+            grid-template-columns: repeat( 5, 162px )
+            margin: auto
+            .tile
+                font-family: Raleway-SemiBold
+                a
+                    font-size: 8pt
+                    color: #cccccc
+                    text-decoration: none
+                    text-transform: initial
+                    transition: .2s
+                    &:hover
+                        color: $accent
+                        text-decoration: underline
+                        transition: .2s
+                        img
+                            width: 90px
+                            filter: drop-shadow(1px 2px 1px rgba(0, 0, 0, .6))
+                            opacity: .8
+                            transition: .2s
+                    &::after
+                        color: #cccccc
+                        transition: .2s
+                img
+                    width: 75px
+                    margin: auto
+                    height: 98px
+                    display: block
+                    transition: .1s
+                .name
+                    padding: 10px 0
+                    text-align: center
+                    position: relative
+                
