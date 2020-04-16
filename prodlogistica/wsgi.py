@@ -7,9 +7,12 @@ For more information on this file, see
 https://docs.djangoproject.com/en/2.2/howto/deployment/wsgi/
 """
 
-import os
+import os, sys
 
 from django.core.wsgi import get_wsgi_application
+
+sys.path.insert(0, '/var/www/u0721006/data/www/prodlogistica/prodlogistica')
+sys.path.insert(1, '/var/www/u0721006/data/venv/lib/python3.7/site-packages')
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'prodlogistica.settings')
 
