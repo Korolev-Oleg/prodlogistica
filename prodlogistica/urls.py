@@ -11,11 +11,14 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.contrib.staticfiles.urls import static
 from django.views.static import serve
 
+from prodlogistica.apps.robots.views import robots
+
 admin.autodiscover()
 
 urlpatterns = [
-    url(r'^sitemap\.xml$', sitemap,
+    url(r'^sitemap\.xml/$', sitemap,
         {'sitemaps': {'cmspages': CMSSitemap}}),
+    url(r'^robots.txt/$', robots),
 ]
 
 urlpatterns += i18n_patterns(
