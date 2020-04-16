@@ -1,12 +1,12 @@
 
 .tabs
     background-color: #f0f3f5
-    padding: 70px 0    
+    padding: 70px 0
     .wrapper
         grid-template-columns: 2fr 1fr
         +r($lg)
             grid-template-columns: 1fr
-    
+
 .tabs-slider
     font-family: Open Sans Regular
     $navSmWidth : 110px
@@ -70,14 +70,14 @@
                 text-transform: uppercase
                 +r($sm)
                     width: $navSmWidth
-            
+
             &:hover
                 &::before
                     transition: .1s
                     background: $accent
                     color: white
-                    
-                    
+
+
 
         li:nth-child(1)::before
             content: "о нас"
@@ -93,12 +93,17 @@
 
 .slick-list
     margin: 43px 0 0 0
+    +r($sm)
+        margin: 0
 
-.slick-slider
+.slick-active
+    .pic-about
+        display: grid!important
+
+
 .about
-    
     display: grid!important
-    grid-template-rows: 1fr 2fr 2fr 1fr
+    // grid-template-rows: 1fr 2fr 2fr 1fr
     grid-template-columns: 1fr 2fr
     line-height: 20px
     +r($md)
@@ -106,16 +111,18 @@
     +r($sm)
         grid-template-columns: 1fr
     .pic-about
-        display: grid
+        display: none
         grid-template-columns: 2
         max-width: 291px
         max-height: 311px
         grid-row: 1/5
-        padding-right: $gutter
+        // padding-right: $gutter
         +r($sm)
-            padding: 0
             width: 100%
             grid-column: 1/-1
+            grid-row: 4
+            margin: 30px auto
+            max-width: 264-20px
     h2
         margin: auto 0
         font-size: 15.2px
@@ -177,22 +184,26 @@
 
 .slick-slide .contacts
     display: grid!important
-    
+
     .profiles
         margin-top: 15px
-        grid-template-columns: repeat(5, 1fr)
+        grid-template-columns: repeat(4, 1fr)
+        +r($md)
+            grid-template-columns: repeat(2, 1fr)
+
         font-family: Open Sans Regular
 
         color: #666666
         .profile
             text-align: center
-            margin: auto
             line-height: 17px
             .photo
                 margin: 10px auto
-                max-width: 98px
-                max-height: 98px
+                max-width: 150px
+                max-height: 150px
                 overflow: hidden
+                +r($md)
+                    // max-height: 120px
                 .name
                     display: grid
                     transition: .2s
@@ -207,6 +218,12 @@
                 img
                     filter: none
                     transition: .2s
+                    width: -webkit-fill-available
+                    min-height: 150px
+                    max-height: 150px
+
+
+
             &:hover
                 img
                     filter: brightness(0.84)
@@ -222,15 +239,20 @@
                 color: #333333
                 font-size: 15px
                 font-family: Raleway-SemiBold
-                
+
     .address-block
         margin-top: 50px
-        li 
+        li
             line-height: 22px
             i
                 margin-right: 9px
+                float: left
+            p
+                float: left
 
 .slick-slide
     #map
         li
             margin-bottom: 20px!important
+            +r($sm)
+                margin-top: 45px

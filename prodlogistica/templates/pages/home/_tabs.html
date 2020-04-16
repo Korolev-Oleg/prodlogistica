@@ -1,12 +1,11 @@
 {% load cms_tags %}
-
 <section class="tabs container-fluid">
   <div class="container">
     <div class="wrapper grid">
       <div class="info">
         <div class="tabs-slider grid">
           <div class="about grid">
-            <img class="pic-about" src="{{ STATIC_URL }}img/pic-about.png"alt=""/>
+            <img class="pic-about" src="{{ STATIC_URL }}img/tabs-home/pic-about.png"alt=""/>
             <h2>
               Продуктовая компания с 2014 года
             </h2>
@@ -28,45 +27,83 @@
                 Честные цены
               </li>
             </ul>
-            <a href="/o-kompanii" class="more">больше <i class="i-right-open"></i></a>
+            <a href="/o-kompanii" class="more">подробнее <i class="i-right-open"></i></a>
           </div>
 
-          {# START CONTACTS TAB #}
+          {# START CONTACTS TAB #}с
           <div class="contacts grid">
             <div class="profiles grid">
-              {% for manager in managers %}
               <div class='profile'>
                 <div class="photo">
-                  <img src="{{ STATIC_URL }} img/tabs-home/managers/profile-1.png" alt="Профиль 1">
-
+                  <img src="{{ STATIC_URL }}img/tabs-home/managers/profile-1.png" alt="">
                   <div class="name">
-                    <p>{{ manager.name }}</p>
+                    <p>Сергей В.</p>
                   </div>
                 </div>
-                <p class="departament">{{ manager.departament }}</p>
+                <p class="departament">Тендерный отдел</p>
                 <div class="contact-data">
-                  <p class="phone">{{ manager.contacts }}</p>
+                  <p class="email">all@prodlogistica.ru</p>
+                  <p class="phone">+7 495 212‑20-80</p>
                 </div>
               </div>
-              {% endfor %}
+              <div class='profile'>
+                <div class="photo">
+                  <img src="{{ STATIC_URL }}img/tabs-home/managers/profile-2.png" alt="">
+                  <div class="name">
+                    <p>Ольга Б.</p>
+                  </div>
+                </div>
+                <p class="departament">Тендерный отдел</p>
+                <div class="contact-data">
+                  <p class="email">all@prodlogistica.ru</p>
+                  <p class="phone">+7 495 212‑20-80</p>
+                </div>
+              </div>
+              <div class='profile'>
+                <div class="photo">
+                  <img src="{{ STATIC_URL }}img/tabs-home/managers/profile-3.png" alt="">
+                  <div class="name">
+                    <p>Андрей З.</p>
+                  </div>
+                </div>
+                <p class="departament">Менеджер отдела закупок</p>
+                <div class="contact-data">
+                  <p class="email">all@prodlogistica.ru</p>
+                  <p class="phone">+7 495 212‑20-80</p>
+                </div>
+              </div>
+              <div class='profile'>
+                <div class="photo">
+                  <img src="{{ STATIC_URL }}img/tabs-home/managers/profile-4.png" alt="">
+                  <div class="name">
+                    <p>Флора С.</p>
+                  </div>
+                </div>
+                <p class="departament">Менеджер отдела кадров</p>
+                <div class="contact-data">
+                  <p class="email">all@prodlogistica.ru</p>
+                  <p class="phone">+7 495 212‑20-80</p>
+                </div>
+              </div>
+
             </div>
 
             <ul class="address-block">
               <li><i class="i-right"></i>
-                Адрес: Ступинский пр., 1А, стр. 1, Москва
+                <p>Адрес:&nbsp{% placeholder "address" %}</p><br>
               </li>
               <li><i class="i-phone"></i>
-                Телефон: +7 495 212‑20-80
+                <p>Телефон:&nbsp{% placeholder "phone" %}</p><br>
               </li>
               <li><i class="i-mail-alt"></i>
-                Почта: prodlogistica@mail.ru
+                <p>Почта:&nbsp{% placeholder "email" %}</p><br>
               </li>
             </ul>
           </div>
           {# END CONTACTS TAB #}
           <div id="map" style="width: 100%; height: 295px; padding-right: 10px;" data-slideout-ignore>
             <li><i class="i-right"></i>
-              Адрес: Ступинский пр., 1А, стр. 1, Москва
+              Адрес:&nbsp{% placeholder "address" %}
             </li>
           </div>
         </div>

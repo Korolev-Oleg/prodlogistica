@@ -22,21 +22,19 @@
     {% block head %}{% endblock %}
   </head>
   <body>
-
-    <!-- BEGIN content -->
-    {% cms_toolbar %}
-    {% include "partials/_nav-slideout.html" %}
-    <div class="content" id="content">
+  {#<!-- BEGIN content -->#}
+  {% cms_toolbar %}
+  {% include "partials/_nav-slideout.html" %}
+  <div class="content" id="content">
       {% include "partials/base/_header.html" %}
       {% block content %}{% endblock %}
       {% include "partials/base/_footer.html" %}
-    </div>
-    <!-- END content -->
-
-    <!-- BEGIN scripts -->
-    {% render_block "js" %}
-    <script type="text/javascript" src="{{ STATIC_URL }}js/app.js"></script>
-    <!-- END scripts -->
-
+      {% include "partials/_feedback.html" %}
+  </div>
+  {#<!-- END content -->#}
+  {#<!-- BEGIN scripts -->#}
+  {% render_block "js" %}
+  <script type="text/javascript" src="{{ STATIC_URL }}js/app.js"></script>
+  {#<!-- END scripts -->#}
   </body>
 </html>

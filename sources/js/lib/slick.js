@@ -1,13 +1,13 @@
 import "slick-carousel/slick/slick"
 
-// $(document).ready(function(){
 $(document).ready(function(){
   $('.tabs-slider').slick({
     dots: true,
-    infinite: true,
+    // infinite: true,
     speed: 125,
     fade: true,
-    cssEase: 'linear'
+    cssEase: 'linear',
+    draggable: false
   });
 
   $('.clients-slider').slick({

@@ -1,3 +1,5 @@
+{% load cms_tags menu_tags sekizai_tags %}
+{% load cms_tags %}
 <footer>
   <div class="container">
     <div class="content grid">
@@ -7,8 +9,10 @@
         </div>
         <p>Подпишитесь на нашу рассылку и мы будем информировать Вас о новых проектах и акциях.</p>
         <div class="email-field">
-          <p>Ваш email адрес</p>
-          <a href="#" class="btn-mail">
+          <label>
+            <input type="text" placeholder="Ваш email адрес">
+          </label>
+          <a href="#" class="btn-mail" id="footer_mail">
             <i class="i-mail-alt"></i>
           </a>
         </div>
@@ -18,42 +22,7 @@
           <p>карта сайта</p>
         </div>
         <ul>
-          <li>
-            <a href="">
-              <i class="i-right-open"></i>
-              <p>о нас</p>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <i class="i-right-open"></i>
-              <p>вакансии</p>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <i class="i-right-open"></i>
-              <p>услуги</p>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <i class="i-right-open"></i>
-              <p>новости</p>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <i class="i-right-open"></i>
-              <p>контакты</p>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <i class="i-right-open"></i>
-              <p>соглашение</p>
-            </a>
-          </li>
+          {% show_menu 0 100 100 100 %}
         </ul>
       </div>
       <div class="spacer"></div>
@@ -61,20 +30,21 @@
         <div class="title">
           <p>обратная связь</p>
         </div>
-        <address>Ступинский пр., 1А, стр. 1, Москва</address>
-        <p class="phone">+7 495 212‑20-80</p>
-        <p class="mailto"><a href="mailto:prodlogistica@mail.ru?subject=Сообщение с сайта">prodlogistica@mail.ru</a></p>
+        <address>{% placeholder "address" %}</address>
+        <p class="phone">{% placeholder "phone" %}</p>
+        <p class="mailto"><a href="mailto:prodlogistica@mail.ru?subject=Сообщение с сайта">{% placeholder "email" %}</a></p>
         <div class="feed">
-          <a href="#" class="btn">
-            <i class="i-odnoklassniki"></i>
-          </a>
-          <a href="#" class="btn">
+          <a href="https://vk.com/id470176359" target="_blank" class="btn">
             <i class="i-vkontakte"></i>
           </a>
-          <a href="" class="btn">
+          <a href="https://hh.ru/employer/649480" target="_blank" class="btn">
+            <p>hh</p>
+          </a>
+          <a href="" target="_blank" class="btn">
             <i class="i-gplus"></i>
           </a>
         </div>
+        <a href="#" class="btn-feed js-popup-open" data-popup-target="popup-name">Оставить заявку</a>
       </div>
     </div>
     <p class="copyright">ООО «ПРОДЛОГИСТИКА ЮГ» все права защищены</p>

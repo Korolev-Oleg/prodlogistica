@@ -1,9 +1,10 @@
-'use-strict'
+'use-strict';
 const {src, dest, watch, parallel} = require('gulp');
 const sass = require('gulp-sass');
-const webpack = require('webpack')
-const webpackStream = require('webpack-stream')
-const webpackConfig = require('./webpack.config')
+const webpack = require('webpack');
+const webpackStream = require('webpack-stream');
+const webpackConfig = require('./webpack.config');
+const sourcemaps = require('gulp-sourcemaps');
 
 gPaths = {
   src: './sources/',
@@ -31,12 +32,16 @@ function scripts(cb) {
   return src(paths.js.src)
   .pipe(webpackStream(webpackConfig), webpack)
   .pipe(dest(paths.js.dest));
-};
+}
 
 function styles(cb) {
   return src(paths.css.src)
-  .pipe(sass())
-  .pipe(dest(paths.css.dest));
+    .pipe(sourcemaps.init())
+    .pipe(sass({
+      includePaths: ['node_modules']
+    }).on('error', sass.logError))
+    .pipe(sourcemaps.write())
+    .pipe(dest(paths.css.dest));
 }
 
 function build(){
@@ -45,7 +50,7 @@ function build(){
 }
 
 exports.default = function() {
-  build()
+  build();
   watch(paths.js.watch, scripts);
   watch(paths.css.watch, styles);
 }

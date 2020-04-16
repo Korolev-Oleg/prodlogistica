@@ -1,0 +1,29 @@
+@import "popup-simple/style.scss"
+
+$duration: .2s
+.popup
+    transition: $duration
+    z-index: 100
+    +r($sm)
+        padding: 0
+    .popup__inner
+        max-width: fit-content
+        padding: 24px 24px
+        border-radius: 14px
+        height: auto
+        transform: scale(.5)
+        transition: $duration
+
+        +r($sm)
+            padding: 10px
+
+
+
+.popup--active
+    transition: $duration
+    .popup__inner
+        height: auto
+        transform: scale(1)
+        transition: $duration ease-out
+    i
+        color: #1d2124

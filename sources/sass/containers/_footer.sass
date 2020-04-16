@@ -1,5 +1,5 @@
-$FCOLOR: #bcc0c4 
-$BIGFOOTER: FALSE // разворачивание футера
+$FCOLOR: #bcc0c4
+$BIGFOOTER: TRUE // разворачивание футера
 
 footer
     background-color: $footer
@@ -14,10 +14,10 @@ footer
         text-transform: uppercase
 
     .content
-        @if $BIGFOOTER
+        @if $BIGFOOTER == FALSE
             display: none
 
-        padding: 69px 0 
+        padding: 69px 0
         grid-template-columns: repeat(3, 1fr)
         border-bottom: solid 1px #384653
         +r($md)
@@ -36,9 +36,11 @@ footer
             border-radius: 4px
             height: 37px
             margin-top: 50px
-            p
+            input
                 font-family: Open Sans RegularItalic
                 float: left
+                background: #49525a
+                color: #bcc0c4
 
             .btn-mail
                 float: right
@@ -48,7 +50,7 @@ footer
                 border-radius: 5px
                 position: relative
 
-                i 
+                i
                     color: white
 
     .sitemap
@@ -75,7 +77,7 @@ footer
             margin-top: 15px
 
         .feed
-            margin-top: 25px
+            margin-top: 17px
             line-height: 30px
             .btn
                 text-align: center
@@ -85,11 +87,16 @@ footer
                 width: 30px
                 float: left
                 border-radius: 4px
-                // padding: 6px
-                i 
+                min-width: 69px
+                i,p
                     color: white
-    
+                    position: relative
+                    top: -7px
+                    text-transform: lowercase
+        .btn-feed
+            margin-top: 17px
+
     .copyright
-        padding: 22px 0
+        padding: 17px 0
         text-transform: uppercase
         font-family: Open Sans Regular
