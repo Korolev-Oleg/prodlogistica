@@ -9,7 +9,6 @@ https://docs.djangoproject.com/en/2.2/howto/deployment/wsgi/
 """
 
 import os, sys
-
 if sys.version < "3.7.6":
     os.execle("/var/www/u0721006/data/www/venv/bin/", "python3", *sys.argv)
 
