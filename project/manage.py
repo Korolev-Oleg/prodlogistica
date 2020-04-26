@@ -6,7 +6,7 @@ from ftplib import FTP
 
 
 def main():
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'prodlogistica.settings')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
@@ -18,13 +18,5 @@ def main():
     execute_from_command_line(sys.argv)
 
 
-def upload():
-    ftp = FTP('prodlogistica.ru')
-    print(ftp.login('u0721006', 'P8p2Q6o9'))
-
-
 if __name__ == '__main__':
-    if sys.argv[1] == 'upload':
-        upload()
-    else:
-        main()
+    main()

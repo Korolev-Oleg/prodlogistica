@@ -11,7 +11,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.contrib.staticfiles.urls import static
 from django.views.static import serve
 
-from prodlogistica.apps.robots.views import robots
+from config.apps.robots.views import robots
 
 admin.autodiscover()
 

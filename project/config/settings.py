@@ -40,9 +40,9 @@ ALLOWED_HOSTS = [
 # Application definition
 
 
-ROOT_URLCONF = 'prodlogistica.urls'
+ROOT_URLCONF = 'config.urls'
 
-WSGI_APPLICATION = 'prodlogistica.wsgi.application'
+WSGI_APPLICATION = 'config.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
@@ -88,14 +88,14 @@ MEDIA_ROOT = os.path.join(DATA_DIR, 'media')
 STATIC_ROOT = os.path.join(DATA_DIR, 'static')
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'prodlogistica', 'static'),
+    os.path.join(BASE_DIR, 'config', 'static'),
 )
 SITE_ID = 1
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'prodlogistica', 'templates'), ],
+        'DIRS': [os.path.join(BASE_DIR, 'config', 'templates'), ],
         'OPTIONS': {
             'context_processors': [
                 'django.contrib.auth.context_processors.auth',
@@ -134,7 +134,7 @@ MIDDLEWARE = [
 ]
 
 INSTALLED_APPS = [
-    'prodlogistica.apps.robots.apps.RobotsConfig',
+    'config.apps.robots.apps.RobotsConfig',
     'djangocms_admin_style',
     'django.contrib.auth',
     'django.contrib.contenttypes',
