@@ -1,11 +1,18 @@
 # E-comerce website for company "Prodlogistica South"
 >djangocms / python
-## Deployment django to web server
+## Deployment django and configure server
+
 #### First we need create user:
 ````
 adduser www
 usermod -aG sudo www
 ````
+#### Configure locales:
+Сhoose only <b>[*] ru_RU.UTF-8 UTF-8</b> and set this default
+```
+sudo localedef ru_RU.UTF-8 -i ru_RU -fUTF-8 ; \export LANGUAGE=ru_RU.UTF-8 ; \export LANG=ru_RU.UTF-8 ; \export LC_ALL=ru_RU.UTF-8 ; \sudo locale-gen ru_RU.UTF-8 ; \sudo dpkg-reconfigure locales
+```
+
 #### Configure SSH:
 ````
 sudo vim /etc/ssh/sshd_config
@@ -15,13 +22,17 @@ sudo vim /etc/ssh/sshd_config
     # if ssh key registred
     # PasswordAuthentication no
 
-sudo service ssh restart
 ````
+and restart
+```
+sudo service ssh restart
+```
+
 #### Init — packages & ZSH:
 ````
 sudo apt-get install -y zsh tree redis-server nginx libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python3-dev python-imaging python3-lxml libxslt-dev python-libxml2 python-libxslt1 libffi-dev libssl-dev python-dev gnumeric libsqlite3-dev libpq-dev libxml2-dev libxslt1-dev libjpeg-dev libfreetype6-dev libcurl4-openssl-dev screenfetch supervisor
 ````
-###### nstall oh-my-zsh:
+#### Install oh-my-zsh:
 ```
 cd ~
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -42,4 +53,10 @@ sudo rm -f ../Python-3.8.1.tgz
 
 python3.8 -V
 ```
-#### :
+#
+#### Install certbot and letncrypt
+#### Configure nginx
+#### gunicorn
+#### po
+#### supervisor 
+
