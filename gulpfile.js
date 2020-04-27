@@ -8,7 +8,7 @@ const sourcemaps = require('gulp-sourcemaps');
 
 gPaths = {
   src: './sources/',
-  dest: './prodlogistica/static/',
+  dest: './config/static/',
 }
 
 paths = {
