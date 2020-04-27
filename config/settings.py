@@ -227,7 +227,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'prodlogistica',
         'USER': 'postgres',
-        'PASSWORD': 'prodlog_t!()N20ms',
+        'PASSWORD': 't!()N20ms',
+        # 'PASSWORD': 'prodlog_t!()N20ms',
         'HOST': 'localhost',
         'PORT': 5432
     }
