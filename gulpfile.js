@@ -53,4 +53,4 @@ exports.default = function() {
   build();
   watch(paths.js.watch, scripts);
   watch(paths.css.watch, styles);
-}
+};

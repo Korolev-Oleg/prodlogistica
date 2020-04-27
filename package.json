@@ -17,6 +17,7 @@
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
     "node-sass": "^4.13.1",
+    "popup-simple": "^1.0.7",
     "webpack": "^4.42.1",
     "webpack-stream": "^5.2.1"
   },
@@ -25,7 +26,6 @@
     "jquery": "^3.5.0",
     "jquery-migrate": "^3.2.0",
     "jquery-parallax.js": "^1.5.0",
-    "popup-simple": "^1.0.7",
     "slick-carousel": "^1.8.1",
     "slideout": "^1.0.1"
   }
