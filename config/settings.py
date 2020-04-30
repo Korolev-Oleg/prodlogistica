@@ -213,24 +213,24 @@ CMS_PERMISSION = True
 CMS_PLACEHOLDER_CONF = {}
 
 DATABASES = {
-    'default': {
-        'CONN_MAX_AGE': 0,
-        'ENGINE': 'django.db.backends.sqlite3',
-        'HOST': 'localhost',
-        'NAME': 'project.db',
-        'PASSWORD': '',
-        'PORT': '',
-        'USER': ''
-    },
-
     # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    #     'NAME': 'prodlogistica',
-    #     'USER': 'dbms',
-    #     'PASSWORD': 'prodlog_t!()N20ms',
+    #     'CONN_MAX_AGE': 0,
+    #     'ENGINE': 'django.db.backends.sqlite3',
     #     'HOST': 'localhost',
-    #     'PORT': 5432
-    # }
+    #     'NAME': 'project.db',
+    #     'PASSWORD': '',
+    #     'PORT': '',
+    #     'USER': ''
+    # },
+
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'prodlogistica',
+        'USER': 'dbms',
+        'PASSWORD': 'prodlog_t!()N20ms',
+        'HOST': 'localhost',
+        'PORT': 5432
+    }
 
 }
 
