@@ -12,9 +12,9 @@ const slideout = new Slideout({
 });
 // // eslint-disable-next-line func-names
 $('.toggle-button').on('click', function() {
-  slideout.toggle()
+  slideout.toggle();
 });
 
 $('.close-button').on('click', function() {
-  slideout.toggle()
+  slideout.toggle();
 });

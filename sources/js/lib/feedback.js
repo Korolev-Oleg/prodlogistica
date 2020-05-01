@@ -41,5 +41,5 @@ popupF.onClose = () => {
 
 const getFormWidth = () => {
   if (window.innerWidth > window.innerHeight) return 473;
-  return window.innerWidth * 0.95
+  return window.innerWidth * 0.90 - 19
 };

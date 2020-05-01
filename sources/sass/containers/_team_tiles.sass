@@ -36,10 +36,13 @@
     +r($lg)
         grid-template-columns: repeat(2, 1fr)
     +r($md)
-        grid-template-columns: repeat(1, 1fr)
+        grid-template-columns: repeat(2, 1fr)
         text-align: center
         & *
             margin: auto
+    +r($sm)
+        grid-template-columns: repeat(1, 1fr)
+
     .name
         text-transform: uppercase
         margin-top: 15px
@@ -60,6 +63,7 @@
 
         +r($lg)
             margin-right: 0
+            transform: scale(.9)
         img
             max-height: 296px
             filter: none
@@ -83,7 +87,8 @@
                 margin: auto
                 float: left
                 color: white
-                font-family: Open Sans RegularItalic
+                font-family: Open Sans Regular
+                font-style: inherit
                 &::before
                     margin-right: 10px
 
@@ -118,9 +123,11 @@
             grid-row: 3
             margin-top: 100px
         +r($lg)
+            display: none
             text-align: -webkit-right
             margin-top: 0
         +r($md)
+            display: none
             grid-row: 6
             .separator
                 display: none
@@ -129,13 +136,13 @@
 .hiring-baner
     // grid-column: 2
     +r($xlm)
-        grid-row: 4
+        grid-row: auto
         grid-column: 2
         text-align: -webkit-center
 
 
     +r($md)
-        grid-row: 7
+        grid-row: auto
         grid-column: auto
 
     .wrap

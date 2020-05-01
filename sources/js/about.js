@@ -1,4 +1,5 @@
 import './lib/hello'
 import './lib/config'
-import './lib/slideout'
 import './lib/sticky_header'
+import './lib/slideout'
+import './lib/slick'

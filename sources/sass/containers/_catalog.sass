@@ -7,19 +7,29 @@ section.catalog
             @if $debugMode
                 padding-bottom: 1000px
         +r($lg)
-            .catalog-tiles 
-                grid-template-columns: repeat( 3, 162px ) !important
+            .catalog-tiles
+                grid-template-columns: repeat( 5, 130px ) !important
+        +r($md)
+            .catalog-tiles
+                grid-template-columns: repeat( 4, 112px ) !important
         +r($sm)
-            .catalog-tiles 
-                grid-template-columns: repeat( 2, 162px ) !important
+            .catalog-tiles
+                grid-template-columns: repeat( 3, 27vw ) !important
 
 
-             
+        +r(365)
+            .catalog-tiles
+                .tile
+                    a
+                        img
+                            width: 20vw
+
+
         .heading
             color: white
             text-align: center
             line-height: 32px
-            padding-bottom: 30px 
+            padding-bottom: 30px
             .services-title
                 font-family: Raleway-Bold
                 font-size: 30px
@@ -29,7 +39,7 @@ section.catalog
             .separator
                 margin: auto
 
-        .catalog-tiles 
+        .catalog-tiles
             grid-template-columns: repeat( 5, 162px )
             margin: auto
             .tile
@@ -62,4 +72,3 @@ section.catalog
                     padding: 10px 0
                     text-align: center
                     position: relative
-                

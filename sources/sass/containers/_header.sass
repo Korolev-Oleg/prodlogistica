@@ -43,25 +43,25 @@ header
         .links
             grid-column: -1
             margin: 42px 0 $navtop-mg-top
-            
+
             div
                 float: left
                 p, a, i, ul
                     float: left
-            
+
             .feedback
                 p:nth-child(1)
                     border-right: #eee solid 1px
                 p
                     padding: 23px 27px 17px
-                    
+
                     i
                         margin: 0 8px
 
             .search
                 margin: 11px 27px 0 0
 
-                    
+
             .lang
                 margin-top: 21px
                 ul li
@@ -81,13 +81,19 @@ header
                     transition: padding 0.3s
                     &:hover
                         position: relative
-                        padding-bottom: 19px 
-    
+                        padding-bottom: 19px
+
 
 .header-main
     background-color: white
     z-index: 100
     left: 0
+    top: 0
+    transition: top .1s
+    &.slideup
+        top: -65px
+        transition: top .1s
+
     .container
         grid-template-columns: 3fr 1fr
         +r($lg)
@@ -131,11 +137,11 @@ header
             font-size: 20px
             i
                 color: $dark
-            &::active 
+            &::active
                 background-color: white
-            &:hover 
+            &:hover
                 background-color: white
-            &:focus 
+            &:focus
                 background-color: white
             &:target
 
@@ -170,11 +176,11 @@ header
     display: none
 
 
-.slideout-menu-left 
+.slideout-menu-left
     left: 0
 
 
-.slideout-menu-right 
+.slideout-menu-right
     right: 0
 
 +r($lg)
@@ -182,7 +188,7 @@ header
         position: fixed
         width: 100vw
 
-    // .slideout-panel 
+    // .slideout-panel
     //     z-index: 1000000000000000
     //     will-change: transform
         // background-color: #FFF
@@ -191,21 +197,21 @@ header
 
 .slideout-open,
 .slideout-open body,
-.slideout-open .slideout-panel 
+.slideout-open .slideout-panel
     overflow: hidden
 
 
-.slideout-open .slideout-menu 
+.slideout-open .slideout-menu
     display: block
 
 // +rmin(780)
-//     .slideout-panel 
+//     .slideout-panel
 //         margin-left: 256px
-    
-//     .slideout-menu 
+
+//     .slideout-menu
 //         display: block
-    
-//     .btn-hamburger 
+
+//     .btn-hamburger
 //         display: none
 
 #menu

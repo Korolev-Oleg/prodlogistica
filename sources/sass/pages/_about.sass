@@ -65,6 +65,7 @@
 
     .img
         background-size: cover!important
+        background-position: top!important
         width: 102.2%
         height: 545px
         position: relative
@@ -72,6 +73,9 @@
             height: 60vh
         +r($sm)
             height: 300px
+        +r($lg)
+            left: -15px
+            width: 109%
 
     .first
         +r($lg)
@@ -80,7 +84,6 @@
         left: -15px
         +r($lg)
             grid-row: 4
-            left: 0
     .third
         +r($lg)
             grid-row: 6
