@@ -4,9 +4,18 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-    mode: 'development',
-    output: {
-        filename: 'app.js',
+  mode: 'production',
+  entry: {
+    app: "./sources/js/app",
+    home: "./sources/js/home",
+    about: "./sources/js/about",
+    // contacts:"./sources/js/contacts",
+    // catalog:"./sources/js/catalog"
+  },
+  output: {
+    path: __dirname + '/config/static',
+    filename: '[name].js',
+      library: '[name]'
     },
     module: {
         rules: [
