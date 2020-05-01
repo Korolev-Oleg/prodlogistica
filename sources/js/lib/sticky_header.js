@@ -4,14 +4,6 @@
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable no-prototype-builtins */
 
-function debug(action, a, b) {
-  console.log(
-    action,
-    `start: ${a}`,
-    `current: ${b}`,
-  )
-}
-
 let startScroll = window.pageYOffset - window.pageYOffset % 100;
 document.addEventListener('DOMContentLoaded', function(){
   $(window).scroll(function(){
@@ -26,12 +18,10 @@ document.addEventListener('DOMContentLoaded', function(){
     if (window.pageYOffset >= 0){
       if (window.pageYOffset - offset >= startScroll){
         $('.header-main').addClass("slideup");
-        debug(' + hide', startScroll, window.pageYOffset);
         startScroll = window.pageYOffset;
 
       } else if (window.pageYOffset + offset <= startScroll) {
         $('.header-main').removeClass("slideup");
-        debug(' - show', startScroll, window.pageYOffset);
         startScroll = window.pageYOffset;
       }
     }
