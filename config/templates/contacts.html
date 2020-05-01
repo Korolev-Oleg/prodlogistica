@@ -3,13 +3,16 @@
 {% block title %}{% page_attribute "page_title" %}{% endblock title %}
 
 
-{% block header %}
+{% block head %}
+  <link rel="stylesheet" media="all" href="{{ STATIC_URL }}css/contacts.css"/>
 {% endblock %}
 
 {% block content %}
-
 	{% include "partials/base/_indevelop.html" %}
 	{# {% include "partials/contacts/_map.html" %} #}
 	{# {% include "partials/contacts/_feedback.html" %} #}
+{% endblock %}
 
+{% block scripts %}
+  <script type="text/javascript" src="{{ STATIC_URL }}js/app.js"></script>
 {% endblock %}

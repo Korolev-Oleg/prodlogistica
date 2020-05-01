@@ -2,10 +2,18 @@
 {% load cms_tags %}
 {% block title %}{% page_attribute "page_title" %}{% endblock title %}
 
+{% block head %}
+  <link rel="stylesheet" media="all" href="{{ STATIC_URL }}css/home.css"/>
+{% endblock %}
+
 {% block content %}
 	{% include "partials/home/_banner.html" %}
 	{% include "partials/home/_tabs.html" %}
 	{% include "partials/home/_catalog.html" %}
 	{% include "partials/home/_team_tiles.html" %}
 	{% include "partials/_clients.html" %}
+{% endblock %}
+
+{% block scripts %}
+  <script type="text/javascript" src="{{ STATIC_URL }}js/home.js"></script>
 {% endblock %}

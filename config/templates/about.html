@@ -2,7 +2,15 @@
 {% load cms_tags %}
 {% block title %}{% page_attribute "page_title" %}{% endblock title %}
 
+{% block head %}
+  <link rel="stylesheet" media="all" href="{{ STATIC_URL }}css/about.css"/>
+{% endblock %}
+
 {% block content %}
 	{% include "pages/about/_tiles.html" %}
 	{% include "partials/_clients.html" %}
+{% endblock %}
+
+{% block scripts %}
+  <script type="text/javascript" src="{{ STATIC_URL }}js/about.js"></script>
 {% endblock %}

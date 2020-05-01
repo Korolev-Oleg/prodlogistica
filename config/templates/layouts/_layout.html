@@ -15,8 +15,7 @@
     <meta name="format-detection" content="telephone=no"/>
     <link rel="shortcut icon" href="{{ STATIC_URL }}favicon.ico" type="image/x-icon">
     <link rel="icon" href="{{ STATIC_URL }}favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" media="all" href="{{ STATIC_URL }}css/app.css"/>
-    <link rel="canonical" href="https://www.prodlogistica.ru/ru/"/>
+    <link rel="canonical" href="//www.prodlogistica.ru/"/>
     <meta name="yandex-verification" content="d5ba5b68813a7722" />
     {% include "partials/_media-tags.html" %}
     {% render_block "css" %}
@@ -35,7 +34,7 @@
   {#<!-- END content -->#}
   {#<!-- BEGIN scripts -->#}
   {% render_block "js" %}
-  <script type="text/javascript" src="{{ STATIC_URL }}js/app.js"></script>
+  {% block scripts %}{% endblock %}
   {#<!-- END scripts -->#}
 
   <!-- Yandex.Metrika counter -->
