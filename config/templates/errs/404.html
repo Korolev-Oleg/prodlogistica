@@ -1,0 +1,24 @@
+{% extends "layouts/_layout.html" %}
+{% load cms_tags %}
+{% block meta %}<meta name="robots" content="noindex, nofollow">{% endblock %}
+{% block head %}
+  <link rel="stylesheet" media="all" href="{{ STATIC_URL }}css/error.css"/>
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div class="grid error">
+      <h2 class="error-code">404</h2>
+      <div class="error-decryption">
+        <div class="separator"></div>
+        <p class="error-title">Запрашиваемая страница не найдена</p>
+        <p>Возможно, неправильно указан путь в адресной строке или страница была удалена.</p>
+        <p>Возврат на <a href="/">главную страницу</a></p>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block scripts %}
+  <script type="text/javascript" src="{{ STATIC_URL }}js/app.js"></script>
+{% endblock %}

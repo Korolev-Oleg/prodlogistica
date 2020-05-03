@@ -1,0 +1,30 @@
+
+body
+    font-family: "Open Sans Regular"
+
+
+.error
+    min-height: calc(100vh - 622px)
+    padding: 10px 0 100px
+
+    a
+        color: $accent
+        text-decoration: underline
+
+    .error-code
+        color: $accent
+        font-size: 10em
+        margin: auto 0 auto auto
+        +r($lg)
+            margin: auto
+
+    .error-title
+        color: #333333
+        font-family: "Open Sans Bold"
+        font-size: 2.1em
+
+    .error-decryption
+        grid-column: 2
+        margin: auto
+        +r($lg)
+            grid-column: 1

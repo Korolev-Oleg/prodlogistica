@@ -16,6 +16,9 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = False
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -23,10 +26,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '1tv^5t_81mo3#b%=)+c_07gvt1_c1io0(yto%t$s=9s#!z-wrw'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+if DEBUG:
+    SECRET_KEY = '1tv^5t_81mo3#b%=)+c_07gvt1_c1io0(yto%t$s=9s#!z-wrw'
+else:
+    SECRET_KEY = '1tv^5t_81mo3#b%=)+c_07gvt1_c1io0(yto%t$s=9s#!z-asd'
+    # os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q'
+    #                                     '+pmu)5%asj6yjpkag')
 
 ALLOWED_HOSTS = [
     '',  # LOCALE
@@ -135,6 +140,8 @@ MIDDLEWARE = [
 
 INSTALLED_APPS = [
     'config.apps.robots.apps.RobotsConfig',
+    # end local apps
+
     'djangocms_admin_style',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -212,27 +219,29 @@ CMS_PERMISSION = True
 
 CMS_PLACEHOLDER_CONF = {}
 
-DATABASES = {
-    # 'default': {
-    #     'CONN_MAX_AGE': 0,
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'HOST': 'localhost',
-    #     'NAME': 'project.db',
-    #     'PASSWORD': '',
-    #     'PORT': '',
-    #     'USER': ''
-    # },
-
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'prodlogistica',
-        'USER': 'dbms',
-        'PASSWORD': 'prodlog_t!()N20ms',
-        'HOST': 'localhost',
-        'PORT': 5432
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'CONN_MAX_AGE': 0,
+            'ENGINE': 'django.db.backends.sqlite3',
+            'HOST': 'localhost',
+            'NAME': 'project.db',
+            'PASSWORD': '',
+            'PORT': '',
+            'USER': ''
+        },
     }
-
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'prodlogistica',
+            'USER': 'dbms',
+            'PASSWORD': 'prodlog_t!()N20ms',
+            'HOST': 'localhost',
+            'PORT': 5432
+        },
+    }
 
 THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.colorspace',
