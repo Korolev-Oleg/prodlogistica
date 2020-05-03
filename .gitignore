@@ -16,4 +16,4 @@ project.db
 yarn.lock
 package-lock.json
 #prodlogistica/settings.py
-./static/
+static/
