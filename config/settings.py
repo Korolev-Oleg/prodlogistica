@@ -18,6 +18,7 @@ import os
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
+SERVER_DB = True
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -220,7 +221,8 @@ CMS_PERMISSION = True
 
 CMS_PLACEHOLDER_CONF = {}
 
-if DEBUG:
+
+if SERVER_DB:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -231,26 +233,16 @@ if DEBUG:
             'PORT': 5432
         },
     }
-    # DATABASES = {
-    #     'default': {
-    #         'CONN_MAX_AGE': 0,
-    #         'ENGINE': 'django.db.backends.sqlite3',
-    #         'HOST': 'localhost',
-    #         'NAME': 'project.db',
-    #         'PASSWORD': '',
-    #         'PORT': '',
-    #         'USER': ''
-    #     },
-    # }
 else:
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'prodlogistica',
-            'USER': 'dbms',
-            'PASSWORD': 'prodlog_t!()N20ms',
+            'CONN_MAX_AGE': 0,
+            'ENGINE': 'django.db.backends.sqlite3',
             'HOST': 'localhost',
-            'PORT': 5432
+            'NAME': 'project.db',
+            'PASSWORD': '',
+            'PORT': '',
+            'USER': ''
         },
     }
 

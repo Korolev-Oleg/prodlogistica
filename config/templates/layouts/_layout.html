@@ -16,7 +16,7 @@
     <meta name="format-detection" content="telephone=no"/>
     <link rel="shortcut icon" href="{{ STATIC_URL }}favicon.ico" type="image/x-icon">
     <link rel="icon" href="{{ STATIC_URL }}favicon.ico" type="image/x-icon">
-    <link rel="canonical" href="//www.prodlogistica.ru/"/>
+    <link rel="canonical" href="//www.prodlogistica.ru{{ request.get_full_path }}"/>
     <meta name="yandex-verification" content="d5ba5b68813a7722" />
     <meta name="google-site-verification" content="o6iLKARd47EFORXFaG47OVRKJ4aZQAGWXLBhodP9W-s" />
     {% include "partials/_media-tags.html" %}
@@ -42,5 +42,6 @@
   <!-- Yandex.Metrika counter -->
   {% include "data/yandex.metrika.html" %}
   <!-- /Yandex.Metrika counter -->
+
   </body>
 </html>
