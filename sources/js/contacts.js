@@ -1,4 +1,3 @@
-import './lib/hello'
-import './lib/config'
-import './lib/slideout'
-import './lib/sticky_header'
+import './app'
+import {initYamaps} from "./lib/yamaps";
+initYamaps();

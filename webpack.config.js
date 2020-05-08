@@ -9,7 +9,7 @@ module.exports = {
     app: "./sources/js/app",
     home: "./sources/js/home",
     about: "./sources/js/about",
-    // contacts:"./sources/js/contacts",
+    contacts:"./sources/js/contacts",
     // catalog:"./sources/js/catalog"
   },
   output: {

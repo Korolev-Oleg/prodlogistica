@@ -1,5 +1,2 @@
-import './lib/hello'
-import './lib/config'
-import './lib/sticky_header'
-import './lib/slideout'
+import './app'
 import './lib/slick'

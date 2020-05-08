@@ -8,11 +8,13 @@
 {% endblock %}
 
 {% block content %}
-	{% include "partials/base/_indevelop.html" %}
-	{# {% include "partials/contacts/_map.html" %} #}
-	{# {% include "partials/contacts/_feedback.html" %} #}
+  <div class="contacts grid container">
+    <p class="title big">Контакты</p>
+    {% include "partials/contacts/_feedback.html" %}
+    {% include "partials/contacts/_map.html" %}
+  </div>
 {% endblock %}
 
 {% block scripts %}
-  <script type="text/javascript" src="{{ STATIC_URL }}js/app.js"></script>
+  <script type="text/javascript" src="{{ STATIC_URL }}js/contacts.js"></script>
 {% endblock %}

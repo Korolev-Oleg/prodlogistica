@@ -8,7 +8,7 @@ function loadYamapsScript() {
   document.head.appendChild(yamapsAPI);
 }
 
-function initYamaps(){
+export function initYamaps(){
   try {
     /* eslint-disable-next-line no-use-before-define */
     ymaps.ready(init);
@@ -40,8 +40,9 @@ $('.tabs-slider').on('beforeChange', function(event, slick, _currentSlide, nextS
   if (nextSlide === 2 && !YAMAPS_READY) {
     loadYamapsScript()
     const interval = setInterval(() => {
-      YAMAPS_READY = initYamaps()
+      YAMAPS_READY = initYamaps();
       if (YAMAPS_READY) clearInterval(interval);
     }, 100)
   }
 });
+
