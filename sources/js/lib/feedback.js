@@ -3,13 +3,13 @@ import Popup from "popup-simple/src/main";
 const popupF = new Popup();
 popupF.init();
 
-const feedFrame = {
+export const feedFrame = {
   aSrc: 'https://yastatic.net/q/forms-frontend-ext/_/embed.js',
   fSrc: 'https://forms.yandex.ru/u/5e977b9b52be132a001fbfe2/?iframe=1',
   fName: 'ya-form-5e977b9b52be132a001fbfe2',
 };
 
-const feedbackCreate = (obj, params) => {
+export const feedbackCreate = (obj, params) => {
   const formApi = document.createElement('script');
   const iframe = document.createElement('iframe');
   formApi.src = obj.aSrc;
