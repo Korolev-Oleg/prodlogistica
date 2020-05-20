@@ -4,9 +4,8 @@
   <head>
     <meta charset="utf-8"/>
     <title>{% block title %}Продлогистика ЮГ{% endblock title %}</title>
-    <meta name="description" content="{% page_attribute "meta_description" %}">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
-{#    <meta http-equiv="cleartype" content="on">#}
+    <meta http-equiv="cleartype" content="on">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="theme-color" content="#fff"/>
     <meta name="MobileOptimized" content="320">
@@ -31,13 +30,13 @@
       {% include "partials/base/_header.html" %}
       {% block content %}{% endblock %}
       {% include "partials/base/_footer.html" %}
-      {% include "partials/_feedback.html" %}
+      {% include "partials/popups/_feedback.html" %}
+      {% include "partials/popups/_callback.html" %}
   </div>
   {#<!-- END content -->#}
-  {#<!-- BEGIN scripts -->#}
+
   {% render_block "js" %}
   {% block scripts %}{% endblock %}
-  {#<!-- END scripts -->#}
 
   <!-- Yandex.Metrika counter -->
   {% include "data/yandex.metrika.html" %}

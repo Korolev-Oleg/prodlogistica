@@ -4,7 +4,7 @@
     <div class="wrapper grid">
       <div class="info">
         <div class="tabs-slider grid">
-          <div class="about grid">
+          <div class="about grid" title="О нас">
             <img class="pic-about" src="{{ STATIC_URL }}img/tabs-home/pic-about.jpg" alt=""/>
             <h2>
               Продуктовая компания с 2014 года
@@ -31,55 +31,63 @@
           </div>
 
           {# START CONTACTS TAB #}
-          <div class="contacts grid">
+          <div class="contacts grid" title="Контакты">
             <div class="profiles grid">
 
               <div class='profile'>
-                <div class="photo">
-                  <img src="{{ STATIC_URL }}img/tabs-home/managers/profile-1.jpg" alt="">
-                  <div class="name">
-                    <p>Андрей З.</p>
+                <a href="tel:74952122080">
+                  <div class="photo">
+                    <img src="{{ STATIC_URL }}img/tabs-home/managers/profile-1.jpg" alt="">
+                    <div class="name">
+                      <p>Андрей З.</p>
+                    </div>
                   </div>
-                </div>
-                <p class="departament">Менеджер отдела закупок</p>
-                <div class="contact-data">
-                  <p class="email">all@prodlogistica.ru</p>
-                  <p class="phone">+7 495 212‑20-80</p>
-                </div>
+                  <p class="departament">Менеджер отдела закупок</p>
+                  <div class="contact-data">
+{#                    <p class="phone">+7 495 212‑20-80</p>#}
+                  </div>
+                </a>
               </div>
 
               <div class='profile'>
-                <div class="photo">
-                  <img src="{{ STATIC_URL }}img/tabs-home/managers/profile-4.jpg" alt="">
-                  <div class="name">
-                    <p>Флора С.</p>
+                <a href="tel:74952122080">
+                  <div class="photo">
+                    <img src="{{ STATIC_URL }}img/tabs-home/managers/profile-4.jpg" alt="">
+                    <div class="name">
+                      <p>Флора С.</p>
+                    </div>
                   </div>
-                </div>
-                <p class="departament">Менеджер отдела кадров</p>
-                <div class="contact-data">
-                  <p class="email">all@prodlogistica.ru</p>
-                  <p class="phone">+7 495 212‑20-80</p>
-                </div>
+                  <p class="departament">Менеджер отдела кадров</p>
+                  <div class="contact-data">
+{#                    <p class="phone">+7 495 212‑20-80</p>#}
+                  </div>
+                </a>
               </div>
 
             </div>
 
             <ul class="address-block">
-              <li><i class="i-right"></i>
-                <p>Адрес:&nbsp;{% placeholder "address" %}</p><br>
+              <li>
+                <i class="i-right"></i>
+                <p>Адрес:&nbsp;</p>
+                  Ступинский проезд, 1А, стр. 1, Москва
               </li>
-              <li><i class="i-phone"></i>
-                <p>Телефон:&nbsp;{% placeholder "phone" %}</p><br>
+              <li>
+                <i class="i-phone"></i>
+                <p>Телефон:&nbsp;</p>
+                <a href="tel:+7 495 212-20-80" class="telephone dark-text">+7 495 212-20-80</a>
               </li>
-              <li><i class="i-mail-alt"></i>
-                <p>Почта:&nbsp;{% placeholder "email" %}</p><br>
-              </li>
+{#              <li>#}
+{#                <i class="i-mail-alt"></i>#}
+{#                <p>Почта:&nbsp;</p>#}
+{#                  {% placeholder "email" %}#}
+{#              </li>#}
             </ul>
           </div>
           {# END CONTACTS TAB #}
-          <div id="map" style="width: 100%; height: 295px; padding-right: 10px;" data-slideout-ignore>
+          <div id="map" title="Карта" style="width: 100%; height: 295px; padding-right: 10px;" data-slideout-ignore>
             <li><i class="i-right"></i>
-              Адрес:&nbsp;{% placeholder "address" %}
+              Адрес: Ступинский проезд, 1А, стр. 1, Москва
             </li>
           </div>
         </div>

@@ -20,7 +20,7 @@ paths = {
   css: {
     src: gPaths.src + 'sass/*.sass',
     dest: gPaths.dest + 'css',
-    watch: gPaths.src + 'sass/**/*.sass',
+    watch: [gPaths.src + 'sass/**/*.sass', gPaths.src + 'sass/**/*.scss'],
   },
   js: {
     src: gPaths.src + 'js',

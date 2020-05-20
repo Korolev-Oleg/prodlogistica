@@ -57,6 +57,5 @@ python3.8 -V
 #### Install certbot and letncrypt
 #### Configure nginx
 #### gunicorn
-#### po
 #### supervisor 
 

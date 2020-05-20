@@ -17,7 +17,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import os
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEV = True 
+DEV = False
 DEBUG = DEV
 SERVER_DB = not DEV
 
@@ -221,7 +221,6 @@ CMS_TEMPLATES = (
 CMS_PERMISSION = True
 
 CMS_PLACEHOLDER_CONF = {}
-
 
 if SERVER_DB:
     DATABASES = {

@@ -5,6 +5,7 @@ $navtop-mg-top: 21px
     z-index: 100
     transition: top .4s
     top: 0
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.15)
 
     .preloader
         height: 200vh
@@ -52,12 +53,13 @@ header
             .feedback
                 p:nth-child(1)
                     border-right: #eee solid 1px
-                p
+                a, p
                     padding: 23px 27px 17px
-
+                    color: #777
                     i
                         margin: 0 8px
-
+                a:hover
+                    color: $accent
             .search
                 margin: 11px 27px 0 0
 
@@ -90,6 +92,7 @@ header
     left: 0
     top: 0
     transition: top .1s
+
     &.slideup
         top: -65px
         transition: top .1s
@@ -187,6 +190,7 @@ header
     .header-main
         position: fixed
         width: 100vw
+        box-shadow: 0px -8px 48px rgba(1, 1, 1, 0.15)
 
     // .slideout-panel
     //     z-index: 1000000000000000

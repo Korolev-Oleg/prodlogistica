@@ -4,15 +4,24 @@ $(document).ready(function(){
   $('.tabs-slider').slick({
     dots: true,
     // infinite: true,
+    customPaging: (slider, i) => {
+      var html;
+      html = '<button class="tab">';
+      html += slider.$slides[i].children[0].children[0].getAttribute('title');
+      html += '</button>';
+      html += '<div class="slick-corner"></div>';
+      return html;
+    },
     speed: 125,
     fade: true,
     cssEase: 'linear',
-    draggable: false
+    draggable: false,
+    initialSlide: 1
   });
 
   $('.clients-slider').slick({
     slidesToShow: 5,
-    slidesToScroll: 1,
+    slidesToScroll: 2,
     autoplay: true,
     autoplaySpeed: 1800,
     // centerMode: true,
@@ -23,7 +32,6 @@ $(document).ready(function(){
       breakpoint: 1140,
       settings: {
         slidesToShow: 4,
-        slidesToScroll: 1,
         centerMode: false
       }
     },
@@ -31,7 +39,6 @@ $(document).ready(function(){
       breakpoint: 991,
       settings: {
         slidesToShow: 4,
-        slidesToScroll: 1,
         centerMode: false
       }
     },
@@ -39,7 +46,6 @@ $(document).ready(function(){
       breakpoint: 767,
       settings: {
         slidesToShow: 4,
-        slidesToScroll: 1,
         centerMode: false
       }
     },
@@ -47,7 +53,6 @@ $(document).ready(function(){
       breakpoint: 540,
       settings: {
         slidesToShow: 3,
-        slidesToScroll: 1,
         centerMode: false
       }
     }]
