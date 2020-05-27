@@ -53,6 +53,10 @@ sudo rm -f ../Python-3.8.1.tgz
 
 python3.8 -V
 ```
+### colored nginx conf
+```
+mkdir -p ~/.vim/syntax/ && cd ~/.vim/syntax/ && wget -O nginx.vim 'http://www.vim.org/scripts/download_script.php?src_id=12990' && echo "au BufRead,BufNewFile /etc/nginx/* set ft=nginx" >> ~/.vim/filetype.vim && touch ~/.vimrc && echo ":syntax on" >> ~/.vimrc
+```
 #
 #### Install certbot and letncrypt
 #### Configure nginx

@@ -17,7 +17,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import os
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEV = False
+DEV = True
 DEBUG = DEV
 SERVER_DB = not DEV
 
