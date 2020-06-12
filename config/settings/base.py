@@ -17,32 +17,16 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import os
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEV = True
-DEBUG = DEV
-SERVER_DB = not DEV
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-if DEBUG:
-    SECRET_KEY = '1tv^5t_81mo3#b%=)+c_07gvt1_c1io0(yto%t$s=9s#!z-wrw'
-else:
-    SECRET_KEY = '1tv^5t_81mo3#b%=)+c_07gvt1_c1io0(yto%t$s=9s#!z-asd'
-    # os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q'
-    #                                     '+pmu)5%asj6yjpkag')
 
-ALLOWED_HOSTS = [
-    '',  # LOCALE
-    '31.31.196.51',  # REG RU
-    '192.168.31.23',
-    '127.0.0.1',
-    'localhost',
-    'prodlogistica.ru',
-]
+
 
 # Application definition
 
@@ -91,19 +75,20 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(DATA_DIR, 'media')
-STATIC_ROOT = os.path.join(DATA_DIR, 'static')
+MEDIA_ROOT = os.path.join(DATA_DIR, 'config', 'media')
+STATIC_ROOT = os.path.join(DATA_DIR, 'config', 'static')
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'config', 'static'),
+    os.path.join(BASE_DIR, 'static'),
     # '/home/www/prodlogistica.ru/project',
 )
+
 SITE_ID = 1
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'config', 'templates'), ],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'), ],
         'OPTIONS': {
             'context_processors': [
                 'django.contrib.auth.context_processors.auth',
@@ -142,9 +127,7 @@ MIDDLEWARE = [
 ]
 
 INSTALLED_APPS = [
-    'config.apps.robots.apps.RobotsConfig',
-    # end local apps
-
+    'apps.robots.apps.RobotsConfig',
     'djangocms_admin_style',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -222,33 +205,10 @@ CMS_PERMISSION = True
 
 CMS_PLACEHOLDER_CONF = {}
 
-if SERVER_DB:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'prodlogistica',
-            'USER': 'dbms',
-            'PASSWORD': 'prodlog_t!()N20ms',
-            'HOST': 'localhost',
-            'PORT': 5432
-        },
-    }
-else:
-    DATABASES = {
-        'default': {
-            'CONN_MAX_AGE': 0,
-            'ENGINE': 'django.db.backends.sqlite3',
-            'HOST': 'localhost',
-            'NAME': 'project.db',
-            'PASSWORD': '',
-            'PORT': '',
-            'USER': ''
-        },
-    }
-
 THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.colorspace',
     'easy_thumbnails.processors.autocrop',
     'filer.thumbnail_processors.scale_and_crop_with_subject_location',
     'easy_thumbnails.processors.filters'
 )
+

@@ -1,50 +1,52 @@
 .banner
-  display: grid
-  font-family: "Raleway-Regular"
-  min-height: 78vh
-  font-size: 38.4px
-  color: white
-  background-size: cover!important
-  position: relative
-  align-content: center
-  &.margin-fix
-    +r($lg)
-      margin-top: 117px
-    +rmin($lg)
-      .banner-content
-        padding-top: 151px
-  &::before
-    content: ''
-    position: absolute
-    top: 0
-    left: 0
-    right: 0
-    bottom: 0
-    background-color: $dark
-    opacity: 0.42
+    display: grid
+    font-family: "Raleway-Regular"
+    min-height: 95vh
+    font-size: 38.4px
+    color: white
+    background-size: cover!important
+    position: relative
+    align-content: center
+    top: -100px
 
-  h1
-    font-size: em(30)
-    +r($sm)
-      +fs(20)
-    +r($md)
-      +fs(19)
-  p
-    font-size: em(13)
-    margin-top: 11px
-    height: 31px
-    +r($sm)
-      +fs(16)
-    +r($md)
-      +fs(15)
-  .separator
-    width: 60px
-    margin: auto
+    &.margin-fix
+        +r($lg)
+            margin-top: 117px
+        +rmin($lg)
+            .banner-content
+                padding-top: 151px
+    &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        background-color: $dark
+        opacity: 0.42
+
+    h1
+        font-size: em(30)
+        +r($sm)
+            +fs(20)
+        +r($md)
+            +fs(19)
+    p
+        font-size: em(13)
+        margin-top: 11px
+        height: 31px
+        +r($sm)
+            +fs(16)
+        +r($md)
+            +fs(15)
+    .separator
+        width: 60px
+        margin: auto
 
 .banner-content
-  z-index: 1
-  text-align: center
-  padding: 0 $gutter 60px
+    z-index: 1
+    text-align: center
+    padding: 0 $gutter 60px
 
 // START BANNER SWIPER
 @import "banner_swiper.scss"

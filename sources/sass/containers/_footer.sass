@@ -2,6 +2,7 @@ $FCOLOR: #bcc0c4
 $BIGFOOTER: TRUE // разворачивание футера
 
 footer
+    transition: all .5s
     position: static
     bottom: 0
     width: 100%
@@ -70,6 +71,11 @@ footer
                 margin-right: 7px
             p
                 text-transform: capitalize
+        a
+            &:hover
+                transition: all $transition
+                color: $accent
+
 
     .contacts
         address, p a
@@ -78,6 +84,10 @@ footer
             text-transform: none
         .mailto
             margin-top: 15px
+            a
+                &:hover
+                    transition: all $transition
+                    color: $accent
 
         .feed
             margin-top: 17px
@@ -96,6 +106,10 @@ footer
                     position: relative
                     top: -7px
                     text-transform: lowercase
+                &:hover
+                    transition: all $transition
+                    background-color: $accent
+
         .btn-feed
             margin-top: 17px
 

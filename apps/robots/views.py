@@ -5,4 +5,4 @@ HttpResponse('', content_type='html')
 
 
 def robots(request):
-    return render(request, 'robots.txt', content_type="text/plain")
+    return render(request, 'templates/robots.txt', content_type="text/plain")
