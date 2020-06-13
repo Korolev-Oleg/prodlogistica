@@ -48,7 +48,7 @@ urlpatterns = [
     url(r'^sitemap\.xml/$', sitemap,
         {'sitemaps': {'cmspages': CMSSitemap}}),
     url(r'^robots.txt/$', robots),
-    url(r'^static/', protected_static, name="protected_static"),
+    url(r'^ru/static/', protected_static, name="protected_static"),
 
 
     url(r'^media/(?P<path>.*)$', serve,
