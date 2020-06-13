@@ -78,9 +78,6 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(DATA_DIR, 'media')
 STATIC_ROOT = os.path.join(DATA_DIR, 'static')
 
-print(MEDIA_ROOT)
-print(MEDIA_ROOT)
-
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
     # '/home/www/prodlogistica.ru/project',
@@ -131,6 +128,7 @@ MIDDLEWARE = [
 
 INSTALLED_APPS = [
     'apps.robots.apps.RobotsConfig',
+    'apps.protected_static.apps.ProtectedStaticConfig',
     'djangocms_admin_style',
     'django.contrib.auth',
     'django.contrib.contenttypes',

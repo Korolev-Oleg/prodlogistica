@@ -15,6 +15,7 @@ from django.views.defaults import (server_error, page_not_found,
 from django.views.static import serve
 
 from apps.robots.views import robots
+from  apps.protected_static.views import protected_static
 
 admin.autodiscover()
 
@@ -47,6 +48,8 @@ urlpatterns = [
     url(r'^sitemap\.xml/$', sitemap,
         {'sitemaps': {'cmspages': CMSSitemap}}),
     url(r'^robots.txt/$', robots),
+    url(r'^static/', protected_static, name="protected_static"),
+
 
     url(r'^media/(?P<path>.*)$', serve,
         {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}),
