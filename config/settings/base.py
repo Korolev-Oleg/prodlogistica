@@ -1,7 +1,7 @@
 import os  # isort:skip
 
 gettext = lambda s: s
-DATA_DIR = os.path.dirname(os.path.dirname(__file__))
+DATA_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
 """
 Django settings for prodlogistica project.
 
@@ -75,8 +75,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(DATA_DIR, 'config', 'media')
-STATIC_ROOT = os.path.join(DATA_DIR, 'config', 'static')
+MEDIA_ROOT = os.path.join(DATA_DIR, 'media')
+STATIC_ROOT = os.path.join(DATA_DIR, 'static')
+
+print(MEDIA_ROOT)
+print(MEDIA_ROOT)
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
