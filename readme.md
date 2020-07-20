@@ -1,6 +1,20 @@
 # Коммерческая платформа для компании ООО "Продлогистика Юг"
 >djangocms / python
+## Обзор проекта
+<b>Цель проекта:</b> разработка веб платформы для компании.
+<b>На текущий момент проект включает в себя:</b>
+  * Информативный web сайт страницы ([Главная](https://prodlogistica.ru/ru/) | [Контакты](https://prodlogistica.ru/ru/kontakty/) | [О нас](https://prodlogistica.ru/ru/o-kompanii/))
+  * Система управления контентом djangoCms - [административная панель](https://prodlogistica.ru/ru/admin)
+
+<b>В разработке:</b>
+  * Модуль интеграции платформы с базой данных 1с
+  * Каталог
+  
+Структура платформы:  
+![Структура платформы](media/platform_structure.png)
+#### [Проект интеграции с 1С (windows server)](https://github.com/hustonCun/prodlogistica-1C-server) 
 ## Запуск dev-mode
+
 Установка пакетов python
 ```shell script
     python -m venv env
@@ -30,10 +44,6 @@
     cd ./frontend
     gulp build
 ```
-    
-## Структура платформы   
-![Структура платформы](media/platform_structure.png)
-#### [Проект интеграции с 1С (windows server)](https://github.com/hustonCun/prodlogistica-1C-server) 
 
 ## Деплой проекта и настройка сервера (ubuntu 18.04)
 #### Новый пользователь:
@@ -94,7 +104,7 @@
     cd ~ && sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
-### colored nginx conf
+#### colored nginx conf
 ```shell script
     mkdir -p ~/.vim/syntax/ && cd ~/.vim/syntax/ && wget -O nginx.vim 'http://www.vim.org/scripts/download_script.php?src_id=12990' && echo "au BufRead,BufNewFile /etc/nginx/* set ft=nginx" >> ~/.vim/filetype.vim && touch ~/.vimrc && echo ":syntax on" >> ~/.vimrc
 ```
