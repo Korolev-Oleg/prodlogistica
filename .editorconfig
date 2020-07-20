@@ -8,6 +8,7 @@ trim_trailing_whitespace = true
 
 [*.md]
 trim_trailing_whitespace = false
+tab_width = 4
 
 [*.jade]
 tab_width = 4

@@ -27,12 +27,13 @@
 ## Build
 
 ```shell script
+    cd ./frontend
     gulp build
 ```
     
 ## Структура платформы   
 ![Структура платформы](media/platform_structure.png)
-
+####[Проект интеграции с 1С (windows server)](https://github.com/hustonCun/prodlogistica-1C-server) 
 
 ## Деплой проекта и настройка сервера (ubuntu 18.04)
 #### Новый пользователь:
@@ -58,8 +59,9 @@
     
         # if ssh key registred
         # PasswordAuthentication no
+
     
-    
+
     and restart
     sudo service ssh restart
 ```
@@ -89,8 +91,7 @@
 
 #### Установка oh-my-zsh:
 ```shell script
-    cd ~
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    cd ~ && sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
 ### colored nginx conf
@@ -102,5 +103,5 @@
 #### Configure nginx
 #### gunicorn
 #### postgreSQL
-#### supervisor 
+#### supervisor
 
