@@ -33,7 +33,7 @@
     
 ## Структура платформы   
 ![Структура платформы](media/platform_structure.png)
-####[Проект интеграции с 1С (windows server)](https://github.com/hustonCun/prodlogistica-1C-server) 
+#### [Проект интеграции с 1С (windows server)](https://github.com/hustonCun/prodlogistica-1C-server) 
 
 ## Деплой проекта и настройка сервера (ubuntu 18.04)
 #### Новый пользователь:
