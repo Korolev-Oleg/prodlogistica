@@ -10,7 +10,7 @@
   * Модуль интеграции платформы с базой данных 1с
   * Каталог
   
-Структура проекта:
+#### Структура проекта:
 
     /prodlogistica
         /apps
@@ -35,7 +35,7 @@
         gunicorn_config.py
         manage.py
         
-Структура платформы:  
+#### Структура платформы:  
 ![Структура платформы](media/platform_structure.png)
 #### [Проект интеграции с 1С (windows server)](https://github.com/hustonCun/prodlogistica-1C-server) 
 
@@ -63,7 +63,7 @@
     manage.py runserver --insecure
 ```
 
-## Build
+#### Build
 
 ```shell script
     cd ./frontend
