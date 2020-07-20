@@ -2,7 +2,7 @@
 >djangocms / python
 ## Обзор проекта
 <b>Цель проекта:</b> разработка веб платформы для компании.<br>
-<b>На текущий момент проект включает в себя:</b>
+На текущий момент проект включает в себя:
   * Информативный web сайт страницы ([Главная](https://prodlogistica.ru/ru/) | [Контакты](https://prodlogistica.ru/ru/kontakty/) | [О нас](https://prodlogistica.ru/ru/o-kompanii/))
   * Система управления контентом djangoCms - [административная панель](https://prodlogistica.ru/ru/admin)
 
