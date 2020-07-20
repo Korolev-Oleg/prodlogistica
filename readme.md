@@ -10,11 +10,36 @@
   * Модуль интеграции платформы с базой данных 1с
   * Каталог
   
+Структура проекта:
+
+    /prodlogistica
+        /apps
+            /protected_static   # разграничение статики
+            /robots             # генерация robots.txt
+        /config
+            /settings           # конфигурации проекта
+                base.py
+                develop.py
+                production.py
+            /static             # скомпилированная статика
+                /css
+                /fonts
+                /img
+                /js
+            /templates          # django html исходники
+        /frontend               # исходники фронтенда / nodejs 
+            /css
+            /js
+            gulpfile.js
+            webpack.config.js
+        gunicorn_config.py
+        manage.py
+        
 Структура платформы:  
 ![Структура платформы](media/platform_structure.png)
 #### [Проект интеграции с 1С (windows server)](https://github.com/hustonCun/prodlogistica-1C-server) 
-## Запуск dev-mode
 
+## Как начать разработку
 Установка пакетов python
 ```shell script
     python -m venv env
@@ -22,7 +47,7 @@
     pip install -r requirments.txt
 ```
 
-Установка зависимостей node 
+Установка node зависимостей
 ```shell script
     cd ./frontend
     npm install
@@ -30,7 +55,7 @@
 
 Запуск gulp сервера
 ```shell script
-    gulp
+    npm run-script watch
 ```
 
 Запуск django сервера (для разаработки)
@@ -42,7 +67,7 @@
 
 ```shell script
     cd ./frontend
-    gulp build
+    npm run-script build
 ```
 
 ## Деплой проекта и настройка сервера (ubuntu 18.04)
