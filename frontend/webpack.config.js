@@ -3,14 +3,16 @@
 const path = require('path');
 const webpack = require('webpack');
 
+const isDev = process.env.NODE_ENV === 'development'
+
 module.exports = {
-  mode: 'production',
+  mode: isDev? 'production': 'development',
   entry: {
-    app: "./sources/js/app",
-    home: "./sources/js/home",
-    about: "./sources/js/about",
-    contacts:"./sources/js/contacts",
-    // catalog:"./sources/js/catalog"
+    app: "./js/app",
+    home: "./js/home",
+    about: "./js/about",
+    contacts:"./js/contacts",
+    // catalog:"./js/catalog"
   },
   output: {
     path: __dirname + '/config/static',

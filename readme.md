@@ -1,9 +1,16 @@
 # Коммерческая платформа для компании ООО "Продлогистика Юг"
 >djangocms / python
 ## Запуск dev-mode
-Установка зависимостей
-
+Установка пакетов python
 ```shell script
+    python -m venv env
+    .\env\Scripts\activate
+    pip install -r requirments.txt
+```
+
+Установка зависимостей node 
+```shell script
+    cd ./frontend
     npm install
 ```
 
@@ -24,7 +31,7 @@
 ```
     
 ## Структура платформы   
-![Структура платформы](sources/platform_structure.png)
+![Структура платформы](media/platform_structure.png)
 
 
 ## Деплой проекта и настройка сервера (ubuntu 18.04)
