@@ -3,7 +3,7 @@
 ## Обзор проекта
 <b>Цель проекта:</b> разработка веб платформы для компании.<br>
 На текущий момент проект включает в себя:
-  * Информативный web сайт страницы ([Главная](https://prodlogistica.ru/ru/) | [Контакты](https://prodlogistica.ru/ru/kontakty/) | [О нас](https://prodlogistica.ru/ru/o-kompanii/))
+  * Информативный web сайт, страницы ([Главная](https://prodlogistica.ru/ru/) | [Контакты](https://prodlogistica.ru/ru/kontakty/) | [О нас](https://prodlogistica.ru/ru/o-kompanii/))
   * Система управления контентом djangoCms - [административная панель](https://prodlogistica.ru/ru/admin)
 
 <b>В разработке:</b>
@@ -36,8 +36,8 @@
         manage.py
         
 #### Структура платформы:  
-![Структура платформы](media/platform_structure.png)
-#### [Проект интеграции с 1С (windows server)](https://github.com/hustonCun/prodlogistica-1C-server) 
+![Структура платформы](docs/platform_structure_h.png)
+#### [Проект интеграции с 1С (windows server)](https://github.com/hustonCun/prodlogistica-1C-server)
 
 ## Как начать разработку
 Установка пакетов python
@@ -135,8 +135,10 @@
 ```
 
 #### Install certbot and letncrypt
+https://habr.com/ru/post/318952/
 #### Configure nginx
 #### gunicorn
 #### postgreSQL
 #### supervisor
+
 
