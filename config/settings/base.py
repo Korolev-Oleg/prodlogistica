@@ -123,12 +123,16 @@ MIDDLEWARE = [
     'cms.middleware.user.CurrentUserMiddleware',
     'cms.middleware.page.CurrentPageMiddleware',
     'cms.middleware.toolbar.ToolbarMiddleware',
-    'cms.middleware.language.LanguageCookieMiddleware'
+    'cms.middleware.language.LanguageCookieMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 INSTALLED_APPS = [
+    'apps.catalog.apps.CatalogConfig',
     'apps.robots.apps.RobotsConfig',
     'apps.protected_static.apps.ProtectedStaticConfig',
+    'rest_framework',
+    'corsheaders',
     'djangocms_admin_style',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -213,3 +217,11 @@ THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.filters'
 )
 
+# DRF settings - cros_headers
+CROS_ORIGIN_ALLOW_ALL = False
+CORS_URLS_REGEX = r'^/api/.*$'
+CORS_ORIGIN_WHITELIST = [
+    "http://77.37.174.39:33896",
+    "https://77.37.174.39:33896",
+    "http://localhost"
+]
