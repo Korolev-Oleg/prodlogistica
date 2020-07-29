@@ -9,5 +9,3 @@ def protected_static(request):
     response['Cache-Control'] = 'max-age=86400'
     return response
 
-    # else:
-    #     return HttpResponse(status=400)
