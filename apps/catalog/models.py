@@ -2,7 +2,6 @@ from cms.models.pluginmodel import CMSPlugin
 from cms.models.fields import models
 
 
-# Create your models here.
 class Category(models.Model):
     title = models.CharField(max_length=250, verbose_name='Наименование')
 
@@ -32,11 +31,13 @@ class SubCategory(models.Model):
 
 
 class Product(models.Model):
-    category = models.ForeignKey(Category, on_delete=models.PROTECT,
-                                 verbose_name='Категория')
+    category = models.ForeignKey(
+        Category, on_delete=models.PROTECT,
+        verbose_name='Категория')
 
-    sub_category = models.ForeignKey(SubCategory, on_delete=models.PROTECT,
-                                     verbose_name='Подкатегория')
+    sub_category = models.ForeignKey(
+        SubCategory, on_delete=models.PROTECT,
+        verbose_name='Подкатегория')
 
     code = models.IntegerField(verbose_name='Код')
     name = models.CharField(max_length=150, verbose_name='Наименование')
@@ -44,17 +45,21 @@ class Product(models.Model):
     full_name = models.CharField(max_length=120, verbose_name='Полное наименование')
     nds = models.CharField(max_length=20, verbose_name='Ставка НДС')
 
-    remains = models.FloatField(null=True, blank=True,
-                                verbose_name='Остаток')
+    remains = models.FloatField(
+        null=True, blank=True,
+        verbose_name='Остаток')
 
-    price = models.FloatField(null=True, blank=True,
-                              verbose_name='Цена')
+    price = models.FloatField(
+        null=True, blank=True,
+        verbose_name='Цена')
 
-    reserve_on_firm = models.FloatField(null=True, blank=True,
-                                        verbose_name='Резерв по фирме')
+    reserve_on_firm = models.FloatField(
+        null=True, blank=True,
+        verbose_name='Резерв по фирме')
 
-    remains_fact = models.FloatField(null=True, blank=True,
-                                     verbose_name='Остаток факт.')
+    remains_fact = models.FloatField(
+        null=True, blank=True,
+        verbose_name='Остаток факт.')
 
     val = models.TextField(
         null=True, blank=True,
