@@ -99,47 +99,9 @@
           <div class="separator"></div>
           <p class="title">новости компании</p>
         </div>
-{#        <p>новостей нет</p>#}
-
-        <div class="news-item grid">
-{#          <p class="date">Новостей нет</p>#}
-          <a href="https://hh.ru/vacancy/38002074" target="_blank" class="news-pic"><img src="{{ STATIC_URL }}img/tabs-home/news.svg"
-                                                                         alt=""/></a>
-          <div class="date">
-            <i class="i-calendar"></i>
-            <p>1 августа</p>
-          </div>
-          <div class="title">
-            <p>Новая вакансия - руководитель отдела операторов</p>
-          </div>
-          <a href="https://hh.ru/vacancy/38002074" target="_blank" class="more">подробнее <i class="i-right-open"></i></a>
-        </div>
-
-        <div class="news-item grid">
-          <a href="https://hh.ru/employer/649480" target="_blank" class="news-pic"><img src="{{ STATIC_URL }}img/tabs-home/news.svg"
-                                                                        alt=""/></a>
-          <div class="date">
-            <i class="i-calendar"></i>
-            <p>1 августа</p>
-          </div>
-          <div class="title">
-            <p>Новая вакансия - Менеджер по продажам (продукты питания)</p>
-          </div>
-          <a href="https://hh.ru/employer/649480" target="_blank" class="more">подробнее <i class="i-right-open"></i></a>
-        </div>
-
-        <div class="news-item grid">
-          <a href="https://hh.ru/employer/649480" target="_blank" class="news-pic"><img src="{{ STATIC_URL }}img/tabs-home/news.svg" alt=""/></a>
-          <div class="date">
-            <i class="i-calendar"></i>
-            <p>1 августа</p>
-          </div>
-          <div class="title">
-            <p>Новая вакансия - Оператор 1C</p>
-          </div>
-          <a href="https://hh.ru/employer/649480" target="_blank" class="more">подробнее <i class="i-right-open"></i></a>
-        </div>
-        {#        <a href="#" class="all-news">Все новости</a>#}
+        {#<p>новостей нет</p>#}
+        {% placeholder "News Plugin" %}
+        {#<a href="#" class="all-news">Все новости</a>#}
       </div>
     </div>
   </div>
