@@ -6,7 +6,7 @@ env
 .vscode
 npm-debug.log
 yarn-error.log
-
+__pycache__
 # Editor directories and files
 
 *.suo
@@ -19,3 +19,4 @@ package-lock.json
 #prodlogistica/settings.py
 ./static/
 /static/
+*.pyc
