@@ -1,0 +1,18 @@
+{% if vacancy|length == 0 %}
+  <p>Новостей нет</p>
+{% endif %}
+{% for foo in vacancy %}
+  {% if forloop.counter <= 3 %}
+  <div class="news-item grid">
+    <a href="{{ foo.url }}" target="_blank" class="news-pic"><img src="{{ STATIC_URL }}img/tabs-home/news.svg" alt=""/></a>
+    <div class="date">
+      <i class="i-calendar"></i>
+      <p>{{ foo.date }}</p>
+    </div>
+    <div class="title">
+     <p>{{ foo.title }}</p>
+    </div>
+    <a href="{{ foo.url }}" target="_blank" class="more">подробнее <i class="i-right-open"></i></a>
+  </div>
+  {% endif %}
+{% endfor %}
