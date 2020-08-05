@@ -128,7 +128,8 @@ MIDDLEWARE = [
 ]
 
 INSTALLED_APPS = [
-    'apps.catalog.apps.CatalogConfig',
+    'apps.djangocms_apps.news.apps.NewsConfig',
+    'apps.djangocms_apps.catalog.apps.CatalogConfig',
     'apps.robots.apps.RobotsConfig',
     'apps.protected_static.apps.ProtectedStaticConfig',
     'rest_framework',
