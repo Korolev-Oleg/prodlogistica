@@ -4,6 +4,7 @@ from cms.models.pluginmodel import CMSPlugin
 from django.utils.translation import ugettext_lazy as _
 
 from .models import Vacancy
+from .task import update_news
 
 
 @plugin_pool.register_plugin
@@ -14,6 +15,7 @@ class NewsPlugin(CMSPluginBase):
     cache = False
 
     def render(self, context, instance, placeholder):
+        update_news.delay()
         context.update(
             {
                 'instance': instance,
