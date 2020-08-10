@@ -8,6 +8,7 @@ all = (
     'purchase',)
 
 
+@admin.register(Product)
 class ProductsAdmin(admin.ModelAdmin):
     search_fields = all
     list_display = ('code', 'name', 'category', 'sub_category', 'remains')
@@ -23,6 +24,5 @@ class ProductsAdmin(admin.ModelAdmin):
             return 'code', 'name'
 
 
-admin.site.register(Product, ProductsAdmin)
 admin.site.register(Category)
 admin.site.register(SubCategory)
