@@ -181,12 +181,10 @@ INSTALLED_APPS += [
 ]
 
 LANGUAGES = (
-    ## Customize this
     ('ru', gettext('ru')),
 )
 
 CMS_LANGUAGES = {
-    ## Customize this
     1: [
         {
             'code': 'ru',
