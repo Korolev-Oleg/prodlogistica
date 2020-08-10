@@ -112,6 +112,7 @@ TEMPLATES = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'cms.middleware.utils.ApphookReloadMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -124,14 +125,18 @@ MIDDLEWARE = [
     'cms.middleware.page.CurrentPageMiddleware',
     'cms.middleware.toolbar.ToolbarMiddleware',
     'cms.middleware.language.LanguageCookieMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
 ]
 
+# General apps
 INSTALLED_APPS = [
     'apps.djangocms_apps.news.apps.NewsConfig',
     'apps.djangocms_apps.catalog.apps.CatalogConfig',
     'apps.robots.apps.RobotsConfig',
     'apps.protected_static.apps.ProtectedStaticConfig',
+]
+
+# Service apps
+INSTALLED_APPS += [
     'rest_framework',
     'corsheaders',
     'djangocms_admin_style',
