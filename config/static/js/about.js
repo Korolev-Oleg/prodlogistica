@@ -130,7 +130,7 @@ eval("/* WEBPACK VAR INJECTION */(function($) {$(window).on('load', function onl
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"feedFrame\", function() { return feedFrame; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"generateForm\", function() { return generateForm; });\n/* harmony import */ var popup_simple_src_main__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! popup-simple/src/main */ \"./node_modules/popup-simple/src/main.js\");\n\nconst popup = new popup_simple_src_main__WEBPACK_IMPORTED_MODULE_0__[\"default\"]();\npopup.init(); // Данные для яндекс формы\n\nconst feedFrame = {\n  aSrc: 'https://yastatic.net/q/forms-frontend-ext/_/embed.js',\n  fSrc: 'https://forms.yandex.ru/u/5e977b9b52be132a001fbfe2/?iframe=1',\n  fName: 'ya-form-5e977b9b52be132a001fbfe2'\n};\n/**\r\n * Генератор яндекс формы\r\n * @param popup html бъект в который втавляется форма\r\n */\n\nconst generateForm = popup => {\n  const attributes = popup.attributes;\n  const formApi = document.createElement('script');\n  const iframe = document.createElement('iframe');\n  formApi.src = attributes['data-script'].value;\n  formApi.type = 'text/javascript';\n  formApi.id = 'yaFormApi';\n  iframe.src = attributes['data-form-src'].value;\n  iframe.frameBorder = \"0\";\n  iframe.name = attributes['data-form-name'].value;\n  iframe.id = 'yaIframe';\n  iframe.width = `${getFormWidth()}`; // значения полей передаются через get запрос\n  // if (params) iframe.src += `&${params}`;\n\n  popup.getElementsByClassName('frame_content')[0].append(formApi, iframe);\n};\n\npopup.onOpen = () => {\n  let id = popup.popup.attributes['id'].value;\n  if (id === 'yandex__form') generateForm(popup.popup);\n};\n\npopup.onClose = () => {\n  popup.popup.getElementsByClassName('frame_content')[0].innerHTML = '';\n};\n\nconst getFormWidth = () => {\n  if (window.innerWidth > window.innerHeight) return 473;\n  return window.innerWidth * 0.90 - 19;\n};\n\n//# sourceURL=webpack://%5Bname%5D/./js/lib/feedback.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"feedFrame\", function() { return feedFrame; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"generateForm\", function() { return generateForm; });\n/* harmony import */ var popup_simple_src_main__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! popup-simple/src/main */ \"./node_modules/popup-simple/src/main.js\");\n\nconst popup = new popup_simple_src_main__WEBPACK_IMPORTED_MODULE_0__[\"default\"]();\npopup.init(); // Данные для яндекс формы\n\nconst feedFrame = {\n  aSrc: 'https://yastatic.net/q/forms-frontend-ext/_/embed.js',\n  fSrc: 'https://forms.yandex.ru/u/5e977b9b52be132a001fbfe2/?iframe=1',\n  fName: 'ya-form-5e977b9b52be132a001fbfe2'\n};\n/**\n * Генератор яндекс формы\n * @param popup html бъект в который втавляется форма\n */\n\nconst generateForm = popup => {\n  const attributes = popup.attributes;\n  const formApi = document.createElement('script');\n  const iframe = document.createElement('iframe');\n  formApi.src = attributes['data-script'].value;\n  formApi.type = 'text/javascript';\n  formApi.id = 'yaFormApi';\n  iframe.src = attributes['data-form-src'].value;\n  iframe.frameBorder = \"0\";\n  iframe.name = attributes['data-form-name'].value;\n  iframe.id = 'yaIframe';\n  iframe.width = `${getFormWidth()}`; // значения полей передаются через get запрос\n  // if (params) iframe.src += `&${params}`;\n\n  popup.getElementsByClassName('frame_content')[0].append(formApi, iframe);\n};\n\npopup.onOpen = () => {\n  let id = popup.popup.attributes['id'].value;\n  if (id === 'yandex__form') generateForm(popup.popup);\n};\n\npopup.onClose = () => {\n  popup.popup.getElementsByClassName('frame_content')[0].innerHTML = '';\n};\n\nconst getFormWidth = () => {\n  if (window.innerWidth > window.innerHeight) return 473;\n  return window.innerWidth * 0.90 - 19;\n};\n\n//# sourceURL=webpack://%5Bname%5D/./js/lib/feedback.js?");
 
 /***/ }),
 
@@ -215,15 +215,39 @@ eval("var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!\n * jQ
 
 /***/ }),
 
+/***/ "./node_modules/popup-simple/src/constants.js":
+/*!****************************************************!*\
+  !*** ./node_modules/popup-simple/src/constants.js ***!
+  \****************************************************/
+/*! exports provided: POPUP, OPEN, TARGET, CLOSE, IS_ACTIVE, BTN_IN_POPUP_OPEN, HASH */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"POPUP\", function() { return POPUP; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"OPEN\", function() { return OPEN; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"TARGET\", function() { return TARGET; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"CLOSE\", function() { return CLOSE; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"IS_ACTIVE\", function() { return IS_ACTIVE; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"BTN_IN_POPUP_OPEN\", function() { return BTN_IN_POPUP_OPEN; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"HASH\", function() { return HASH; });\nconst POPUP = 'popup'\nconst OPEN = 'js-popup-open'\nconst TARGET = 'js-popup'\nconst CLOSE = 'js-popup-close'\nconst IS_ACTIVE = 'active'\nconst BTN_IN_POPUP_OPEN = 'js-btn-in-popup-open'\nconst HASH = '#'\n\n\n//# sourceURL=webpack://%5Bname%5D/./node_modules/popup-simple/src/constants.js?");
+
+/***/ }),
+
+/***/ "./node_modules/popup-simple/src/defaultOptions.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/popup-simple/src/defaultOptions.js ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  preventScroll: true,\n  escapeHandler: true,\n  closeOnOverlayClick: true,\n  toggleBtnClass: false,\n});\n\n\n//# sourceURL=webpack://%5Bname%5D/./node_modules/popup-simple/src/defaultOptions.js?");
+
+/***/ }),
+
 /***/ "./node_modules/popup-simple/src/helpers.js":
 /*!**************************************************!*\
   !*** ./node_modules/popup-simple/src/helpers.js ***!
   \**************************************************/
-/*! exports provided: BEMblock, constants */
+/*! exports provided: BEMblock, preventScroll, allowScroll */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"BEMblock\", function() { return BEMblock; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"constants\", function() { return constants; });\nconst BEMblock = (block, name) => {\n  const addMod = mod => {\n    block.classList.add(`${name}--${mod}`)\n  }\n  const removeMod = mod => {\n    block.classList.remove(`${name}--${mod}`)\n  }\n  const toggleMod = mod => {\n    block.classList.toggle(`${name}--${mod}`)\n  }\n  const containsMod = mod => block.classList.contains(`${name}--${mod}`)\n\n  return {\n    name,\n    block,\n    addMod,\n    toggleMod,\n    removeMod,\n    containsMod,\n  }\n}\n\nconst constants = {\n  POPUP: 'popup',\n  OPEN: 'js-popup-open',\n  TARGET: 'js-popup',\n  CLOSE: 'js-popup-close',\n  IS_ACTIVE: 'active',\n  NO_SCROLL: 'no-scroll',\n  BTN_IN_POPUP_OPEN: 'js-btn-in-popup-open',\n  HASH: '#',\n}\n\n\n//# sourceURL=webpack://%5Bname%5D/./node_modules/popup-simple/src/helpers.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"BEMblock\", function() { return BEMblock; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"preventScroll\", function() { return preventScroll; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"allowScroll\", function() { return allowScroll; });\nconst BEMblock = (block, name) => {\n  const addMod = mod => {\n    block.classList.add(`${name}--${mod}`)\n  }\n  const removeMod = mod => {\n    block.classList.remove(`${name}--${mod}`)\n  }\n  const toggleMod = mod => {\n    block.classList.toggle(`${name}--${mod}`)\n  }\n  const containsMod = mod => block.classList.contains(`${name}--${mod}`)\n\n  return {\n    name,\n    block,\n    addMod,\n    toggleMod,\n    removeMod,\n    containsMod,\n  }\n}\n\nfunction preventScroll() {\n  const getScrollbarWidth = (() => window.innerWidth - document.documentElement.clientWidth)()\n  document.body.style.overflow = 'hidden'\n  if (getScrollbarWidth > 0) document.body.style.marginRight = `${getScrollbarWidth}px`\n}\n\nfunction allowScroll() {\n  document.body.style.overflow = ''\n  document.body.style.marginRight = ''\n}\n\n\n//# sourceURL=webpack://%5Bname%5D/./node_modules/popup-simple/src/helpers.js?");
 
 /***/ }),
 
@@ -235,7 +259,175 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Popup; });\n/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./helpers */ \"./node_modules/popup-simple/src/helpers.js\");\n\n\nconst { POPUP, OPEN, TARGET, CLOSE, IS_ACTIVE, NO_SCROLL, BTN_IN_POPUP_OPEN, HASH } = _helpers__WEBPACK_IMPORTED_MODULE_0__[\"constants\"]\n\nconst defaultOptions = {\n  toggleBodyClass: true,\n  escapeHandler: true,\n  closeOnOverlayClick: true,\n  toggleBtnClass: false,\n}\n\nclass Popup {\n  constructor(options) {\n    this.options = { ...defaultOptions, ...options }\n\n    this.open = this.handleOpen.bind(this)\n    this.close = this.handleClose.bind(this)\n    this.observer = new MutationObserver(this.handleMutation.bind(this))\n    this.onPopstate = this.handlePopState.bind(this)\n\n    this.btn = null\n    this.popup = null\n    this.closeTrigger = null\n\n    this.observedPopups = []\n  }\n\n  get popups() {\n    return [...document.querySelectorAll(`.${TARGET}`)]\n  }\n\n  get btns() {\n    return [...document.querySelectorAll(`.${OPEN}`)]\n  }\n\n  get openPopups() {\n    return this.popups.filter((popup) => Object(_helpers__WEBPACK_IMPORTED_MODULE_0__[\"BEMblock\"])(popup, POPUP).containsMod(IS_ACTIVE))\n  }\n\n  get closeBtns() {\n    if (!this.popup) return null\n    return [...this.popup.querySelectorAll(`.${CLOSE}`)]\n  }\n\n  get hashStart() {\n    return window.location.href.indexOf(HASH)\n  }\n\n  resetElements() {\n    this.btn = null\n    this.popup = null\n    this.closeTrigger = null\n    this.observedPopups = []\n    this.options.shouldChangeUrl = false\n  }\n\n  pushUrl() {\n    const url = `${window.location.href}${this.name}`\n    window.history.pushState({}, '', url)\n  }\n\n  removeUrl() {\n    const url = window.location.href.slice(0, this.hashStart)\n    window.history.pushState({}, '', url)\n    this.href = ''\n  }\n\n  handlePopState() {\n    if (this.hashStart === -1) {\n      this.closeTrigger = this.openPopups[this.openPopups.length - 1]\n      this.closePopup()\n    }\n\n    if (this.hashStart > 0) {\n      if (!this.href && !this.btn) this.href = window.location.href.slice(this.hashStart)\n      this.openPopup()\n    }\n  }\n\n  handleEscClick() {\n    if (!this.openPopups.length) return\n    this.closeTrigger = this.openPopups[this.openPopups.length - 1]\n    this.closePopup()\n  }\n\n  handleBtnClick(e) {\n    const closeBtn = e.target.closest(`.${CLOSE}`)\n    if (this.options.closeOnOverlayClick) {\n      const popup = e.target.classList && e.target.classList.contains(TARGET) ? e.target : null\n      this.closeTrigger = closeBtn || popup\n    } else {\n      this.closeTrigger = closeBtn\n    }\n\n    if (!this.closeTrigger) return\n\n    e.preventDefault()\n    this.closePopup()\n  }\n\n  handleOpen(e) {\n    this.btn = e.target.closest(`.${OPEN}`)\n    if (!this.btn) return\n    if (e.target.closest(`.${BTN_IN_POPUP_OPEN}`)) return\n\n    this.openPopup()\n    e.preventDefault()\n  }\n\n  handleClose(e) {\n    if (this.options.escapeHandler && e.code === 'Escape') this.handleEscClick(e)\n    if (e.type === 'click') this.handleBtnClick(e)\n  }\n\n  closePopup() {\n    if (this.href && this.hashStart > 0) this.removeUrl()\n\n    this.popup = this.closeTrigger.closest(`.${TARGET}`)\n    this.name = this.popup.dataset.popup\n    this.btn = document.querySelector(`.${OPEN}[data-popup-target=\"${this.name}\"]`)\n\n    Object(_helpers__WEBPACK_IMPORTED_MODULE_0__[\"BEMblock\"])(this.popup, POPUP).removeMod(IS_ACTIVE)\n    if (this.options.toggleBtnClass.toggle) {\n      Object(_helpers__WEBPACK_IMPORTED_MODULE_0__[\"BEMblock\"])(this.btn, this.options.toggleBtnClass.name).removeMod(IS_ACTIVE)\n    }\n    if (this.options.toggleBodyClass && !this.openPopups.length) {\n      document.body.classList.remove(NO_SCROLL)\n    }\n\n    this.resetElements()\n  }\n\n  openPopup() {\n    this.name = this.btn\n      ? this.btn.dataset.popupTarget || this.href || this.btn.getAttribute('href')\n      : this.href\n\n\n    if (window.location.href.indexOf(HASH) > -1) {\n      this.options.shouldChangeUrl = false\n    } else if (this.name.indexOf(HASH) === 0) {\n      this.options.shouldChangeUrl = true\n      this.href = this.name\n    } else {\n      this.options.shouldChangeUrl = false\n      if (this.href) this.removeUrl()\n    }\n\n    this.popup = this.name.indexOf(HASH) === 0\n      ? document.getElementById(this.name.slice(1))\n      : document.querySelector(`.${TARGET}[data-popup=\"${this.name}\"]`)\n\n\n    if (!this.popup) return\n\n    if (this.name && this.options.shouldChangeUrl) this.pushUrl()\n\n    Object(_helpers__WEBPACK_IMPORTED_MODULE_0__[\"BEMblock\"])(this.popup, POPUP).addMod(IS_ACTIVE)\n    if (this.options.toggleBtnClass.toggle) {\n      Object(_helpers__WEBPACK_IMPORTED_MODULE_0__[\"BEMblock\"])(this.btn, this.options.toggleBtnClass.name).addMod(IS_ACTIVE)\n    }\n    if (this.options.toggleBodyClass) document.body.classList.add(NO_SCROLL)\n\n    if (this.onOpen) this.onOpen()\n\n    const isObserving = !!this.observedPopups.filter((p) => p === this.popup)[0]\n\n    if (isObserving) return\n    this.observer.observe(this.popup, {\n      attributes: true,\n      attributeFilter: ['class'],\n      attributeOldValue: true,\n    })\n    this.observedPopups.push(this.popup)\n  }\n\n  openTarget(target) {\n    this.href = target.id ? `#${target.id}` : null\n    this.btn = this.href\n      ? document.querySelector(`.${OPEN}[href=\"${this.href}\"]`)\n      : document.querySelector(`.${OPEN}[data-popup-target=\"${target.dataset.popup}\"]`)\n\n    this.openPopup()\n  }\n\n  closeAll() {\n    if (!this.openPopups.length) return\n\n    this.openPopups.forEach((popup) => {\n      Object(_helpers__WEBPACK_IMPORTED_MODULE_0__[\"BEMblock\"])(popup, POPUP).removeMod(IS_ACTIVE)\n    })\n    if (this.options.toggleBtnClass.toggle && this.btns.length > 0) {\n      this.btns.forEach((btn) => {\n        Object(_helpers__WEBPACK_IMPORTED_MODULE_0__[\"BEMblock\"])(btn, this.options.toggleBtnClass.name).removeMod(IS_ACTIVE)\n      })\n    }\n\n    if (this.hashStart > 0) this.removeUrl()\n    this.resetElements()\n\n    if (this.options.toggleBodyClass) document.body.classList.remove(NO_SCROLL)\n  }\n\n  handleMutation(mutationsList) {\n    mutationsList.forEach((mutation) => {\n      if (mutation.oldValue.indexOf(`${POPUP}--${IS_ACTIVE}`) > 0) {\n        if (this.onClose) this.onClose()\n      }\n    })\n  }\n\n  _addListeners() {\n    document.addEventListener('click', this.open)\n    document.addEventListener('click', this.close)\n    document.addEventListener('keydown', this.close)\n    window.addEventListener('popstate', this.onPopstate)\n  }\n\n  _removeListeners() {\n    document.removeEventListener('click', this.open)\n    document.removeEventListener('click', this.close)\n    document.removeEventListener('keydown', this.close)\n    window.removeEventListener('popstate', this.onPopstate)\n  }\n\n  _removeOpenClassNames() {\n    this.popups.forEach((popup) => {\n      Object(_helpers__WEBPACK_IMPORTED_MODULE_0__[\"BEMblock\"])(popup, POPUP).removeMod(IS_ACTIVE)\n    })\n    if (this.options.toggleBodyClass) document.body.classList.remove(NO_SCROLL)\n  }\n\n  _onLoad() {\n    if (this.hashStart > 0) {\n      this.href = window.location.href.slice(this.hashStart)\n      this.openPopup()\n    }\n  }\n\n  init() {\n    this._addListeners()\n    this._onLoad()\n  }\n\n  destroy() {\n    this._removeListeners()\n    this._removeOpenClassNames()\n    this.observer.disconnect()\n  }\n}\n\n\n//# sourceURL=webpack://%5Bname%5D/./node_modules/popup-simple/src/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Popup; });\n/* harmony import */ var _methods_closeAll__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./methods/closeAll */ \"./node_modules/popup-simple/src/methods/closeAll.js\");\n/* harmony import */ var _methods_resetElements__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./methods/resetElements */ \"./node_modules/popup-simple/src/methods/resetElements.js\");\n/* harmony import */ var _methods_pushUrl__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./methods/pushUrl */ \"./node_modules/popup-simple/src/methods/pushUrl.js\");\n/* harmony import */ var _methods_removeUrl__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./methods/removeUrl */ \"./node_modules/popup-simple/src/methods/removeUrl.js\");\n/* harmony import */ var _methods_handlePopState__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./methods/handlePopState */ \"./node_modules/popup-simple/src/methods/handlePopState.js\");\n/* harmony import */ var _methods_handleEscClick__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./methods/handleEscClick */ \"./node_modules/popup-simple/src/methods/handleEscClick.js\");\n/* harmony import */ var _methods_handleBtnClick__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./methods/handleBtnClick */ \"./node_modules/popup-simple/src/methods/handleBtnClick.js\");\n/* harmony import */ var _methods_handleOpen__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./methods/handleOpen */ \"./node_modules/popup-simple/src/methods/handleOpen.js\");\n/* harmony import */ var _methods_handleClose__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./methods/handleClose */ \"./node_modules/popup-simple/src/methods/handleClose.js\");\n/* harmony import */ var _methods_openPopup__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./methods/openPopup */ \"./node_modules/popup-simple/src/methods/openPopup.js\");\n/* harmony import */ var _methods_closePopup__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./methods/closePopup */ \"./node_modules/popup-simple/src/methods/closePopup.js\");\n/* harmony import */ var _methods_openTarget__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./methods/openTarget */ \"./node_modules/popup-simple/src/methods/openTarget.js\");\n/* harmony import */ var _methods_closeTarget__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./methods/closeTarget */ \"./node_modules/popup-simple/src/methods/closeTarget.js\");\n/* harmony import */ var _methods_handleMutation__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./methods/handleMutation */ \"./node_modules/popup-simple/src/methods/handleMutation.js\");\n/* harmony import */ var _defaultOptions__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./defaultOptions */ \"./node_modules/popup-simple/src/defaultOptions.js\");\n/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./helpers */ \"./node_modules/popup-simple/src/helpers.js\");\n/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./constants */ \"./node_modules/popup-simple/src/constants.js\");\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nclass Popup {\n  constructor(options) {\n    this.options = { ..._defaultOptions__WEBPACK_IMPORTED_MODULE_14__[\"default\"], ...options }\n\n    this.closeAll = _methods_closeAll__WEBPACK_IMPORTED_MODULE_0__[\"default\"].bind(this)\n    this.resetElements = _methods_resetElements__WEBPACK_IMPORTED_MODULE_1__[\"default\"].bind(this)\n    this.pushUrl = _methods_pushUrl__WEBPACK_IMPORTED_MODULE_2__[\"default\"].bind(this)\n    this.removeUrl = _methods_removeUrl__WEBPACK_IMPORTED_MODULE_3__[\"default\"].bind(this)\n    this.handlePopState = _methods_handlePopState__WEBPACK_IMPORTED_MODULE_4__[\"default\"].bind(this)\n    this.handleEscClick = _methods_handleEscClick__WEBPACK_IMPORTED_MODULE_5__[\"default\"].bind(this)\n    this.handleBtnClick = _methods_handleBtnClick__WEBPACK_IMPORTED_MODULE_6__[\"default\"].bind(this)\n    this.handleOpen = _methods_handleOpen__WEBPACK_IMPORTED_MODULE_7__[\"default\"].bind(this)\n    this.handleClose = _methods_handleClose__WEBPACK_IMPORTED_MODULE_8__[\"default\"].bind(this)\n    this.openPopup = _methods_openPopup__WEBPACK_IMPORTED_MODULE_9__[\"default\"].bind(this)\n    this.closePopup = _methods_closePopup__WEBPACK_IMPORTED_MODULE_10__[\"default\"].bind(this)\n    this.openTarget = _methods_openTarget__WEBPACK_IMPORTED_MODULE_11__[\"default\"].bind(this)\n    this.closeTarget = _methods_closeTarget__WEBPACK_IMPORTED_MODULE_12__[\"default\"].bind(this)\n    this.handleMutation = _methods_handleMutation__WEBPACK_IMPORTED_MODULE_13__[\"default\"].bind(this)\n\n    this.btn = null\n    this.popup = null\n    this.closeTrigger = null\n    this.observedPopups = []\n  }\n\n  get popups() {\n    return [...document.querySelectorAll(`.${_constants__WEBPACK_IMPORTED_MODULE_16__[\"TARGET\"]}`)]\n  }\n\n  get btns() {\n    return [...document.querySelectorAll(`.${_constants__WEBPACK_IMPORTED_MODULE_16__[\"OPEN\"]}`)]\n  }\n\n  get openPopups() {\n    return this.popups.filter(popup => Object(_helpers__WEBPACK_IMPORTED_MODULE_15__[\"BEMblock\"])(popup, _constants__WEBPACK_IMPORTED_MODULE_16__[\"POPUP\"]).containsMod(_constants__WEBPACK_IMPORTED_MODULE_16__[\"IS_ACTIVE\"]))\n  }\n\n  get hashStart() {\n    return window.location.href.indexOf(_constants__WEBPACK_IMPORTED_MODULE_16__[\"HASH\"])\n  }\n\n  get shouldAddPopstate() {\n    return (\n      this.btns.filter(btn => btn.getAttribute('href') && btn.getAttribute('href').length > 2)\n        .length > 0\n    )\n  }\n\n  _addListeners() {\n    this.openHandler = this.handleOpen.bind(this)\n    this.closeHandler = this.handleClose.bind(this)\n    this.popstateHandler = this.handlePopState.bind(this)\n    if (this.onClose) this.observer = new MutationObserver(this.handleMutation.bind(this))\n\n    document.addEventListener('click', this.openHandler)\n    document.addEventListener('click', this.closeHandler)\n    if (this.options.escapeHandler) document.addEventListener('keydown', this.closeHandler)\n    if (this.shouldAddPopstate) window.addEventListener('popstate', this.popstateHandler)\n  }\n\n  _removeListeners() {\n    document.removeEventListener('click', this.openHandler)\n    document.removeEventListener('click', this.closeHandler)\n    if (this.options.escapeHandler) document.removeEventListener('keydown', this.closeHandler)\n    if (this.shouldAddPopstate) window.removeEventListener('popstate', this.popstateHandler)\n  }\n\n  _onLoad() {\n    if (this.hashStart > 0) {\n      this.href = window.location.href.slice(this.hashStart)\n      this.openPopup()\n    }\n  }\n\n  init() {\n    this._addListeners()\n    this._onLoad()\n  }\n\n  destroy() {\n    this.closeAll()\n    this._removeListeners()\n    if (this.observer) this.observer.disconnect()\n  }\n}\n\n\n//# sourceURL=webpack://%5Bname%5D/./node_modules/popup-simple/src/main.js?");
+
+/***/ }),
+
+/***/ "./node_modules/popup-simple/src/methods/closeAll.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/popup-simple/src/methods/closeAll.js ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return closeAll; });\n/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants */ \"./node_modules/popup-simple/src/constants.js\");\n/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../helpers */ \"./node_modules/popup-simple/src/helpers.js\");\n\n\n\nfunction closeAll() {\n  if (!this.openPopups.length) return\n\n  const {\n    resetElements,\n    removeUrl,\n    options: { toggleBtnClass, preventScroll },\n  } = this\n\n  this.openPopups.forEach(popup => {\n    Object(_helpers__WEBPACK_IMPORTED_MODULE_1__[\"BEMblock\"])(popup, _constants__WEBPACK_IMPORTED_MODULE_0__[\"POPUP\"]).removeMod(_constants__WEBPACK_IMPORTED_MODULE_0__[\"IS_ACTIVE\"])\n  })\n  if (toggleBtnClass.toggle && this.btns.length > 0) {\n    this.btns.forEach(btn => {\n      Object(_helpers__WEBPACK_IMPORTED_MODULE_1__[\"BEMblock\"])(btn, toggleBtnClass.name).removeMod(_constants__WEBPACK_IMPORTED_MODULE_0__[\"IS_ACTIVE\"])\n    })\n  }\n\n  if (this.hashStart > 0) removeUrl()\n  resetElements()\n\n  if (preventScroll) Object(_helpers__WEBPACK_IMPORTED_MODULE_1__[\"allowScroll\"])()\n}\n\n\n//# sourceURL=webpack://%5Bname%5D/./node_modules/popup-simple/src/methods/closeAll.js?");
+
+/***/ }),
+
+/***/ "./node_modules/popup-simple/src/methods/closePopup.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/popup-simple/src/methods/closePopup.js ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return closePopup; });\n/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants */ \"./node_modules/popup-simple/src/constants.js\");\n/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../helpers */ \"./node_modules/popup-simple/src/helpers.js\");\n\n\n\nfunction closePopup() {\n  const {\n    closeTrigger,\n    href,\n    hashStart,\n    removeUrl,\n    resetElements,\n    options: { toggleBtnClass, preventScroll },\n  } = this\n\n  this.popup = closeTrigger.closest(`.${_constants__WEBPACK_IMPORTED_MODULE_0__[\"TARGET\"]}`)\n  this.name = this.popup.dataset.popup || `#${this.popup.id}`\n  this.btn =\n    document.querySelector(`.${_constants__WEBPACK_IMPORTED_MODULE_0__[\"OPEN\"]}[data-popup-target=\"${this.name}\"]`) ||\n    document.querySelector(`.${_constants__WEBPACK_IMPORTED_MODULE_0__[\"OPEN\"]}[href=\"${this.name}\"]`)\n\n  if (href && href === this.name && hashStart > 0) removeUrl()\n\n  Object(_helpers__WEBPACK_IMPORTED_MODULE_1__[\"BEMblock\"])(this.popup, _constants__WEBPACK_IMPORTED_MODULE_0__[\"POPUP\"]).removeMod(_constants__WEBPACK_IMPORTED_MODULE_0__[\"IS_ACTIVE\"])\n  if (toggleBtnClass.toggle) Object(_helpers__WEBPACK_IMPORTED_MODULE_1__[\"BEMblock\"])(this.btn, toggleBtnClass.name).removeMod(_constants__WEBPACK_IMPORTED_MODULE_0__[\"IS_ACTIVE\"])\n\n  if (preventScroll && !this.openPopups.length) Object(_helpers__WEBPACK_IMPORTED_MODULE_1__[\"allowScroll\"])()\n\n  resetElements()\n}\n\n\n//# sourceURL=webpack://%5Bname%5D/./node_modules/popup-simple/src/methods/closePopup.js?");
+
+/***/ }),
+
+/***/ "./node_modules/popup-simple/src/methods/closeTarget.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/popup-simple/src/methods/closeTarget.js ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return closeTarget; });\nfunction closeTarget(target) {\n  this.closeTrigger = target\n  this.closePopup()\n}\n\n\n//# sourceURL=webpack://%5Bname%5D/./node_modules/popup-simple/src/methods/closeTarget.js?");
+
+/***/ }),
+
+/***/ "./node_modules/popup-simple/src/methods/handleBtnClick.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/popup-simple/src/methods/handleBtnClick.js ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return handleBtnClick; });\n/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants */ \"./node_modules/popup-simple/src/constants.js\");\n\n\nfunction handleBtnClick(e) {\n  const { target } = e\n  const {\n    closePopup,\n    options: { closeOnOverlayClick },\n  } = this\n  const closeBtn = target.closest(`.${_constants__WEBPACK_IMPORTED_MODULE_0__[\"CLOSE\"]}`)\n\n  if (closeOnOverlayClick) {\n    const popup = target.classList && target.classList.contains(_constants__WEBPACK_IMPORTED_MODULE_0__[\"TARGET\"]) ? target : null\n    this.closeTrigger = closeBtn || popup\n  } else {\n    this.closeTrigger = closeBtn\n  }\n\n  if (!this.closeTrigger) return\n\n  e.preventDefault()\n  closePopup()\n}\n\n\n//# sourceURL=webpack://%5Bname%5D/./node_modules/popup-simple/src/methods/handleBtnClick.js?");
+
+/***/ }),
+
+/***/ "./node_modules/popup-simple/src/methods/handleClose.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/popup-simple/src/methods/handleClose.js ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return handleClose; });\nfunction handleClose(e) {\n  const { code, type } = e\n  const {\n    handleEscClick,\n    handleBtnClick,\n    options: { escapeHandler },\n  } = this\n\n  if (escapeHandler && code === 'Escape') handleEscClick(e)\n  if (type === 'click') handleBtnClick(e)\n}\n\n\n//# sourceURL=webpack://%5Bname%5D/./node_modules/popup-simple/src/methods/handleClose.js?");
+
+/***/ }),
+
+/***/ "./node_modules/popup-simple/src/methods/handleEscClick.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/popup-simple/src/methods/handleEscClick.js ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return handleEscClick; });\nfunction handleEscClick() {\n  if (!this.openPopups.length) return\n  const { closePopup } = this\n  \n  this.closeTrigger = this.openPopups[this.openPopups.length - 1]\n  closePopup()\n}\n\n\n//# sourceURL=webpack://%5Bname%5D/./node_modules/popup-simple/src/methods/handleEscClick.js?");
+
+/***/ }),
+
+/***/ "./node_modules/popup-simple/src/methods/handleMutation.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/popup-simple/src/methods/handleMutation.js ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return handleMutation; });\n/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants */ \"./node_modules/popup-simple/src/constants.js\");\n\n\nfunction handleMutation(mutationsList) {\n  const { onClose } = this\n  if (!onClose) return\n  \n  mutationsList.forEach(({ oldValue }) => {\n    if (oldValue.indexOf(`${_constants__WEBPACK_IMPORTED_MODULE_0__[\"POPUP\"]}--${_constants__WEBPACK_IMPORTED_MODULE_0__[\"IS_ACTIVE\"]}`) > 0) onClose()\n  })\n}\n\n\n//# sourceURL=webpack://%5Bname%5D/./node_modules/popup-simple/src/methods/handleMutation.js?");
+
+/***/ }),
+
+/***/ "./node_modules/popup-simple/src/methods/handleOpen.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/popup-simple/src/methods/handleOpen.js ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return handleOpen; });\n/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants */ \"./node_modules/popup-simple/src/constants.js\");\n\n\nfunction handleOpen(e) {\n  const { target } = e\n  const { openPopup } = this  \n  this.btn = target.closest(`.${_constants__WEBPACK_IMPORTED_MODULE_0__[\"OPEN\"]}`)\n  \n  if (!this.btn) return\n  if (target.closest(`.${_constants__WEBPACK_IMPORTED_MODULE_0__[\"BTN_IN_POPUP_OPEN\"]}`)) return\n\n  openPopup()\n  e.preventDefault()\n}\n\n\n//# sourceURL=webpack://%5Bname%5D/./node_modules/popup-simple/src/methods/handleOpen.js?");
+
+/***/ }),
+
+/***/ "./node_modules/popup-simple/src/methods/handlePopState.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/popup-simple/src/methods/handlePopState.js ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return handlePopState; });\nfunction handlePopState() {\n  const { href, btn, closePopup, openPopup } = this\n\n  if (this.hashStart === -1) {\n    this.closeTrigger = this.openPopups[this.openPopups.length - 1]\n    closePopup()\n  }\n\n  if (this.hashStart > 0) {\n    if (!href && !btn) this.href = window.location.href.slice(this.hashStart)\n    openPopup()\n  }\n}\n\n\n//# sourceURL=webpack://%5Bname%5D/./node_modules/popup-simple/src/methods/handlePopState.js?");
+
+/***/ }),
+
+/***/ "./node_modules/popup-simple/src/methods/openPopup.js":
+/*!************************************************************!*\
+  !*** ./node_modules/popup-simple/src/methods/openPopup.js ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return openPopup; });\n/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants */ \"./node_modules/popup-simple/src/constants.js\");\n/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../helpers */ \"./node_modules/popup-simple/src/helpers.js\");\n\n\n\nfunction openPopup() {\n  const {\n    btn,\n    href,\n    observer,\n    observedPopups,\n    removeUrl,\n    pushUrl,\n    onOpen,\n    onClose,\n    options: { toggleBtnClass, preventScroll: shouldPreventScroll },\n  } = this\n  let shouldChangeUrl\n\n  this.name = btn ? btn.dataset.popupTarget || href || btn.getAttribute('href') : href\n\n  if (window.location.href.indexOf(_constants__WEBPACK_IMPORTED_MODULE_0__[\"HASH\"]) > -1) {\n    shouldChangeUrl = false\n  } else if (this.name.indexOf(_constants__WEBPACK_IMPORTED_MODULE_0__[\"HASH\"]) === 0) {\n    shouldChangeUrl = true\n    this.href = this.name\n  } else {\n    shouldChangeUrl = false\n    if (href) removeUrl()\n  }\n\n  this.popup =\n    this.name.indexOf(_constants__WEBPACK_IMPORTED_MODULE_0__[\"HASH\"]) === 0\n      ? document.getElementById(this.name.slice(1))\n      : document.querySelector(`.${_constants__WEBPACK_IMPORTED_MODULE_0__[\"TARGET\"]}[data-popup=\"${this.name}\"]`)\n\n  if (!this.popup) return\n\n  if (this.name && shouldChangeUrl) pushUrl()\n\n  Object(_helpers__WEBPACK_IMPORTED_MODULE_1__[\"BEMblock\"])(this.popup, _constants__WEBPACK_IMPORTED_MODULE_0__[\"POPUP\"]).addMod(_constants__WEBPACK_IMPORTED_MODULE_0__[\"IS_ACTIVE\"])\n  if (toggleBtnClass.toggle) {\n    Object(_helpers__WEBPACK_IMPORTED_MODULE_1__[\"BEMblock\"])(btn, toggleBtnClass.name).addMod(_constants__WEBPACK_IMPORTED_MODULE_0__[\"IS_ACTIVE\"])\n  }\n  if (shouldPreventScroll) Object(_helpers__WEBPACK_IMPORTED_MODULE_1__[\"preventScroll\"])()\n\n  if (onClose) {\n    const isObserving = !!observedPopups.filter(p => p === this.popup)[0]\n    if (!isObserving) {\n      observer.observe(this.popup, {\n        attributes: true,\n        attributeFilter: ['class'],\n        attributeOldValue: true,\n      })\n      observedPopups.push(this.popup)\n    }\n  }\n\n  if (onOpen) onOpen()\n}\n\n\n//# sourceURL=webpack://%5Bname%5D/./node_modules/popup-simple/src/methods/openPopup.js?");
+
+/***/ }),
+
+/***/ "./node_modules/popup-simple/src/methods/openTarget.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/popup-simple/src/methods/openTarget.js ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return openTarget; });\n/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants */ \"./node_modules/popup-simple/src/constants.js\");\n\n\nfunction openTarget({ id, dataset: { popup: name } }) {\n  const { openPopup } = this\n  this.href = id ? `#${id}` : null\n  this.btn = this.href\n    ? document.querySelector(`.${_constants__WEBPACK_IMPORTED_MODULE_0__[\"OPEN\"]}[href=\"${this.href}\"]`)\n    : document.querySelector(`.${_constants__WEBPACK_IMPORTED_MODULE_0__[\"OPEN\"]}[data-popup-target=\"${name}\"]`)\n\n  openPopup()\n}\n\n\n//# sourceURL=webpack://%5Bname%5D/./node_modules/popup-simple/src/methods/openTarget.js?");
+
+/***/ }),
+
+/***/ "./node_modules/popup-simple/src/methods/pushUrl.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/popup-simple/src/methods/pushUrl.js ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return pushUrl; });\nfunction pushUrl() {\n  const url = `${window.location.href}${this.name}`\n  window.history.pushState({}, '', url)\n}\n\n\n//# sourceURL=webpack://%5Bname%5D/./node_modules/popup-simple/src/methods/pushUrl.js?");
+
+/***/ }),
+
+/***/ "./node_modules/popup-simple/src/methods/removeUrl.js":
+/*!************************************************************!*\
+  !*** ./node_modules/popup-simple/src/methods/removeUrl.js ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return removeUrl; });\nfunction removeUrl() {\n  const url = window.location.href.slice(0, this.hashStart)\n  window.history.pushState({}, '', url)\n  this.href = ''\n}\n\n\n//# sourceURL=webpack://%5Bname%5D/./node_modules/popup-simple/src/methods/removeUrl.js?");
+
+/***/ }),
+
+/***/ "./node_modules/popup-simple/src/methods/resetElements.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/popup-simple/src/methods/resetElements.js ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return resetElements; });\nfunction resetElements() {\n  this.btn = null\n  this.popup = null\n  this.closeTrigger = null\n}\n\n\n//# sourceURL=webpack://%5Bname%5D/./node_modules/popup-simple/src/methods/resetElements.js?");
 
 /***/ }),
 
