@@ -1,0 +1,43 @@
+{% if vacancy|length == 0 %}
+  <p>Новых вакансий нет</p>
+{% endif %}
+{% for foo in vacancy %}
+  {% if forloop.counter <= 3 %}
+  <div class="news-item grid">
+    <a href="{{ foo.url }}" target="_blank" class="news-pic"><img src="{{ STATIC_URL }}img/tabs-home/news.svg" alt=""/></a>
+    <div class="date">
+      <i class="i-calendar"></i>
+      {% if foo.published|date:"m" == "01" %}
+        <p>{{ foo.published|date:"d января" }}</p>
+      {% elif foo.published|date:"m" == "02" %}
+        <p>{{ foo.published|date:"d февраля" }}</p>
+      {% elif foo.published|date:"m" == "03" %}
+        <p>{{ foo.published|date:"d марта" }}</p>
+      {% elif foo.published|date:"m" == "04" %}
+        <p>{{ foo.published|date:"d апреля" }}</p>
+      {% elif foo.published|date:"m" == "05" %}
+        <p>{{ foo.published|date:"d мая" }}</p>
+      {% elif foo.published|date:"m" == "06" %}
+        <p>{{ foo.published|date:"d июня" }}</p>
+      {% elif foo.published|date:"m" == "07" %}
+        <p>{{ foo.published|date:"d июля" }}</p>
+      {% elif foo.published|date:"m" == "08" %}
+        <p>{{ foo.published|date:"d августа" }}</p>
+      {% elif foo.published|date:"m" == "09" %}
+        <p>{{ foo.published|date:"d сентября" }}</p>
+      {% elif foo.published|date:"m" == "10" %}
+        <p>{{ foo.published|date:"d октября" }}</p>
+      {% elif foo.published|date:"m" == "11" %}
+        <p>{{ foo.published|date:"d ноября" }}</p>
+      {% elif foo.published|date:"m" == "12" %}
+        <p>{{ foo.published|date:"d декабря" }}</p>
+      {% endif %}
+    </div>
+    <div class="title">
+      <p href="{{ foo.url }}">{{ foo.title }}</p>
+      <p class="description">{{ foo.description }}...</p>
+    </div>
+    <a href="{{ foo.url }}" target="_blank" class="more">подробнее <i class="i-right-open"></i></a>
+  </div>
+  {% endif %}
+{% endfor %}

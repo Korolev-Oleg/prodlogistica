@@ -3,23 +3,23 @@ from cms.plugin_pool import plugin_pool
 from cms.models.pluginmodel import CMSPlugin
 from django.utils.translation import ugettext_lazy as _
 
-from .models import Vacancy
-from .task import update_news
+from .models import Vacancies
+from .task import update_vacancies
 
 
 @plugin_pool.register_plugin
-class NewsPlugin(CMSPluginBase):
+class VacancyPlugin(CMSPluginBase):
     model = CMSPlugin
-    render_template = "news_plugin.html"
-    name = 'Блок новостей'
+    render_template = "vacancy.html"
+    name = 'Блок вакансий'
     cache = False
 
     def render(self, context, instance, placeholder):
-        update_news.delay()
+        update_vacancies.delay()  # launching a celery task that updates the news
         context.update(
             {
                 'instance': instance,
-                'vacancy': Vacancy.objects.all()
+                'vacancy': Vacancies.objects.all()
             }
         )
         return context
