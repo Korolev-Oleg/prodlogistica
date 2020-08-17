@@ -6,7 +6,12 @@ from ftplib import FTP
 
 
 def main():
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings.develop')
+    # Setup config to do migrate
+    configuration = 'config.settings.develop'
+    if 'production' in sys.argv:
+        configuration = 'config.settings.production'
+
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', configuration)
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
