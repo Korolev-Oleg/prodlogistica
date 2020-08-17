@@ -5,8 +5,9 @@ const webpack = require('webpack');
 
 const isDev = process.env.NODE_ENV === 'development'
 
+
 module.exports = {
-  mode: isDev? 'production': 'development',
+  mode: process.env.NODE_ENV,
   entry: {
     app: "./js/app",
     home: "./js/home",
