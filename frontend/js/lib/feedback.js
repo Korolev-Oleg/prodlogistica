@@ -1,8 +1,6 @@
 import Popup from "popup-simple/src/main";
 
 const popup = new Popup();
-popup.init();
-
 
 // Данные для яндекс формы
 export const feedFrame = {
@@ -13,7 +11,7 @@ export const feedFrame = {
 
 /**
  * Генератор яндекс формы
- * @param popup html бъект в который втавляется форма
+ * @param popup - html объект в который втавляется форма
  */
 export const generateForm = (popup) => {
   const attributes = popup.attributes;
@@ -41,10 +39,12 @@ popup.onOpen = () => {
 };
 
 popup.onClose = () => {
-    popup.popup.getElementsByClassName('frame_content')[0].innerHTML = '';
+  document.getElementsByClassName('frame_content')[0].innerHTML = '';
 };
 
 const getFormWidth = () => {
   if (window.innerWidth > window.innerHeight) return 473;
   return window.innerWidth * 0.90 - 19
 };
+
+popup.init();
