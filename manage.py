@@ -8,8 +8,9 @@ from ftplib import FTP
 def main():
     # Setup config to do migrate
     configuration = 'config.settings.develop'
-    if 'production' in sys.argv:
+    if '--production' in sys.argv:
         configuration = 'config.settings.production'
+        sys.argv.remove('--production')
 
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', configuration)
     try:
