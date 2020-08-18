@@ -7,9 +7,6 @@ body
 	font-size: 13px
 	// +css-lock(16, 50, 600, 1000)
 	line-height: 1.4
-	a
-		text-transform: uppercase
-		font-family: "Open Sans Bold"
 	i
 		color: $accent
 	list-style: none
@@ -17,6 +14,13 @@ body
 body
     p
         font-family: 'Open Sans Regular'
+    a
+        transition: all .1s!important
+        color: #777777
+    a:hover
+        color: $accent
+        text-decoration: underline
+
 
 
 .telephone
