@@ -2,12 +2,16 @@
     background-color: $accent
     color: white
     border-radius: 20px
+    text-transform: uppercase
+    font-family: "Open Sans Bold"
 
 [class^="btn-"]
     transition: background-color .1s ease
 
 [class^="btn-"]:hover, [class^="btn-"]:focus
     background-color: lighten($accent, 5)
+    color: white
+    text-decoration: none!important
 
 .btn-feed
     grid-column: -1
