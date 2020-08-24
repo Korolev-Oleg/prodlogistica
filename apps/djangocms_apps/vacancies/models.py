@@ -5,7 +5,7 @@ from cms.models.pluginmodel import CMSPlugin
 class Vacancies(models.Model):
     """ Vacancies from HeadHunter """
     title = models.CharField(max_length=70, verbose_name='Заголовок')
-    description = models.CharField(max_length=63, verbose_name='Описание')
+    description = models.CharField(max_length=256, verbose_name='Описание')
     published = models.DateTimeField(verbose_name='Дата публикации')
     url = models.URLField(verbose_name='Ссылка')
 
