@@ -129,6 +129,7 @@ MIDDLEWARE = [
 
 # General apps
 INSTALLED_APPS = [
+    'apps.djangocms_apps.contacts.apps.ContactsConfig',
     'apps.djangocms_apps.vacancies.apps.VacanciesConfig',
     'apps.djangocms_apps.catalog.apps.CatalogConfig',
     'apps.robots.apps.RobotsConfig',
