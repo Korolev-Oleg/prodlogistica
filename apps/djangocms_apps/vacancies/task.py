@@ -36,6 +36,6 @@ def update_vacancies() -> None:
         new_vacancy.description = vacancy['snippet']['responsibility']
         new_vacancy.published = datetime.strptime(vacancy['published_at'], "%Y-%m-%dT%H:%M:%S+%f")
         new_vacancy.url = vacancy['alternate_url']
-        new_vacancy.normalize()
+        # new_vacancy.normalize()
         if not new_vacancy.is_contained():
             new_vacancy.save()
