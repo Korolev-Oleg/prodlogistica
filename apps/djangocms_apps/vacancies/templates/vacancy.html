@@ -35,7 +35,7 @@
     </div>
     <div class="title">
       <p href="{{ foo.url }}">{{ foo.title }}</p>
-      <p class="description">{{ foo.description }}...</p>
+      <p class="description">{{ foo.description|truncatewords:11 }}</p>
     </div>
     <a href="{{ foo.url }}" target="_blank" class="more">подробнее <i class="i-right-open"></i></a>
   </div>
