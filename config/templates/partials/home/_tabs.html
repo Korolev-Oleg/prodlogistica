@@ -72,24 +72,28 @@
               <li>
                 <i class="i-right"></i>
                 <p>Адрес:&nbsp;</p>
-                Ступинский проезд, 1А, стр. 1, Москва
+                {% placeholder "address" %}
+{#                Ступинский проезд, 1А, стр. 1, Москва#}
               </li>
               <li>
                 <i class="i-phone"></i>
                 <p>Телефон:&nbsp;</p>
-                <a href="tel:+7 495 212-20-80" class="telephone dark-text">+7 495 212-20-80</a>
+                {% placeholder "phone" %}
+{#                <a href="tel:+7 495 212-20-80" class="telephone dark-text">+7 495 212-20-80</a>#}
               </li>
-              {#              <li>#}
-              {#                <i class="i-mail-alt"></i>#}
-              {#                <p>Почта:&nbsp;</p>#}
-              {#                  {% placeholder "email" %}#}
-              {#              </li>#}
+              <li>
+                <i class="i-mail-alt"></i>
+                <p>Почта:&nbsp;</p>
+                {% placeholder "email" %}
+{#                <a href="mailto:e@prodlg.ru" class="telephone dark-text">e@prodlg.ru</a>#}
+              </li>
             </ul>
           </div>
           {# END CONTACTS TAB #}
           <div id="map" title="Карта" style="width: 100%; height: 295px; padding-right: 10px;" data-slideout-ignore>
             <li><i class="i-right"></i>
-              Адрес: Ступинский проезд, 1А, стр. 1, Москва
+{#              Адрес: Ступинский проезд, 1А, стр. 1, Москва#}
+              {% placeholder "address" %}
             </li>
           </div>
         </div>
