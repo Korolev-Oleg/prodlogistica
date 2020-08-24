@@ -1,0 +1,5 @@
+{% if phone %}
+  <a href="tel:{{ phone }}" class="phone-link"><span itemprop="telephone">{{ phone }}</span></a>
+{% else %}
+  <a href="tel:+7 495 212-20-80" class="phone-link"><span itemprop="telephone">+7 495 212-20-80</span></a>
+{% endif %}
