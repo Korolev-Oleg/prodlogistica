@@ -23,3 +23,22 @@ class VacancyPlugin(CMSPluginBase):
             }
         )
         return context
+
+
+@plugin_pool.register_plugin
+class VacancySingleBlock(CMSPluginBase):
+    model = CMSPlugin
+    render_template = "vacancy_single.html"
+    name = "Блок вакансий (одиночный)"
+    cache = False
+
+    def render(self, context, instance, placeholder):
+        if len(Vacancies.objects.all()):
+            context.update(
+                {
+                    'instance': instance,
+                    'description': Vacancies.objects.order_by('-published')[0].description,
+                    'title': Vacancies.objects.order_by('-published')[0].title,
+                }
+            )
+        return context
