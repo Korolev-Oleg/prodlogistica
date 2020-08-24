@@ -1,3 +1,5 @@
+{% load cms_tags %}
+
 <div class="map-content">
   <div class="separator"></div>
   <p class="title">Главный офис компании</p>
@@ -14,7 +16,7 @@
       <span itemprop="streetAddress">Ступинский проезд, дом 1а, строение 1</span>
       </a></b>
     </div>
-    Телефон: <b><a href="tel:+7 495 212-20-80"><span itemprop="telephone">+7 495 212-20-80</span></a></b>
-    <p>Электронная почта: <b><a href="mailto:all@prodlogistica.ru"><span itemprop="email">all@prodlogistica.ru</span></a></b></p>
+    Телефон: <b>{% placeholder "phone" %}</b>
+    <p>Электронная почта: <b>{% placeholder "email" %}</b></p>
   </div>
 </div>
