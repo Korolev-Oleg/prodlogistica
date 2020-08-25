@@ -227,15 +227,19 @@ header
             list-style: none!important
             text-align: center
             border-bottom: solid 1px #eee
-            &::hover
+            &:hover
                 background-color: #eee
             a
                 color: $dark
                 width: 100%
                 padding: 14px 84px 15px
                 font-family: Open Sans SemiBold
-            .active
-                color: $accent
+    .selected
+        background: #f1f1f1
+        a
+            color: $accent
+            text-decoration: underline
+
     .toggles
         padding: 14px 25px
         .lang
