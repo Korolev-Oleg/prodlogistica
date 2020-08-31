@@ -43,8 +43,12 @@ popup.onClose = () => {
 };
 
 const getFormWidth = () => {
-  if (window.innerWidth > window.innerHeight) return 473;
-  return window.innerWidth * 0.90 - 19
+
+  if (window.innerWidth > window.innerHeight) {
+    return 473;
+  } else {
+    return window.innerWidth * 0.90 - 19
+  }
 };
 
 popup.init();
