@@ -18,7 +18,7 @@ module.exports = {
   output: {
     path: __dirname + '/config/static',
     filename: '[name].js',
-      library: '[name]'
+    library: '[name]'
     },
     module: {
         rules: [
@@ -27,9 +27,6 @@ module.exports = {
             exclude: /(node_modules)/,
             use: {
                 loader: 'babel-loader',
-                // options: {
-                //     presets: ['@babel/preset-env']
-                // }
             }
         },
     ]
