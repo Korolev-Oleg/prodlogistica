@@ -15,14 +15,14 @@ $duration: .2s
         transform: scale(.5)
         transition: $duration
         +r($sm)
-            padding: 24px
+            padding: 12px
 
 
 
 .popup--active
     transition: $duration
     .popup__inner
-        height: 89%
+        overflow: auto
         transform: scale(0.95)
         transition: $duration ease-out
         font-size: 11px
