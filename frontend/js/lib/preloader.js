@@ -19,5 +19,4 @@ function setWhiteCoverWidth(){
   let pageHeight = Math.max( body.scrollHeight, body.offsetHeight,
                              html.clientHeight, html.scrollHeight, html.offsetHeight );
   document.getElementById('white-cover').style.height = String(pageHeight) + 'px'
-  console.log('set white-cover height', pageHeight)
 }
