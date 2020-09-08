@@ -13,7 +13,7 @@ __pycache__
 *.ntvs*
 *.njsproj
 *.sin
-project.db
+project.db*
 yarn.lock
 package-lock.json
 #prodlogistica/settings.py
