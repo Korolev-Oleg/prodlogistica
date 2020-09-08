@@ -20,3 +20,4 @@ package-lock.json
 ./static/
 /static/
 *.pyc
+*.rdb
