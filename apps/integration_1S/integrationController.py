@@ -1,6 +1,8 @@
 from dataclasses import dataclass
 from random import choices
 from string import ascii_letters
+from uuid import uuid4
+
 
 from redis import Redis
 import requests
@@ -8,7 +10,7 @@ import requests
 PROTOCOL = 'https'
 # SERVER_1S = '77.37.174.39:33896'
 SERVER_1S = '127.0.0.1:5001'
-ACTION = 'start_uploading'
+ACTION = 'start_integration'
 
 HOST_1S = f'{PROTOCOL}://{SERVER_1S}/{ACTION}'
 
@@ -44,33 +46,32 @@ class SuccessToken:
 
 class IntegrationController:
     status_codes = StatusCodes
-    secret_key = SuccessToken
+    success_token = SuccessToken
     uploaded_at: str
     status: str
 
-    def __init__(self, hot_start=False, bits=512):
+    def __init__(self, hot_start=False):
         self.redis = Redis()
         self.status = self.__get_status__()
-        self.secret_key_bits = bits
-        self.__preparing__()
+        self.__preparing_tokens__()
 
         if hot_start:
-            self.start()
+            self.request()
 
-    def __preparing__(self) -> None:
-        if self.__is_status_code_correct__(self.status):
+    def __preparing_tokens__(self) -> None:
+        if self.is_status_correct(self.status):
             is_uploaded = self.status == StatusCodes.uploaded
             is_null = self.status == StatusCodes.null
             is_failed = self.status == StatusCodes.connection_failed
             if is_uploaded or is_null or is_failed:
                 self.__save_status_to_redis__(StatusCodes.connection_to_1C_server)
-                self.__new_token__()
+                self.__render_new_token__()
             else:
                 self.__upload_token__()
 
-    def __new_token__(self) -> None:
+    def __render_new_token__(self) -> None:
         """ Create new token and save it in redis """
-        SuccessToken.value = ''.join(choices(ascii_letters, k=self.secret_key_bits))
+        SuccessToken.value = uuid4().hex
         self.redis.set(name=SuccessToken.key_name, value=SuccessToken.value)
 
     def __upload_token__(self) -> None:
@@ -89,7 +90,7 @@ class IntegrationController:
             return StatusCodes.null
 
     @staticmethod
-    def __is_status_code_correct__(status_code: str) -> bool:
+    def is_status_correct(status_code: str) -> bool:
         """ Checks if status_code exists in StatusCodes.__dict__"""
         for attribute in StatusCodes.__dict__:
             if not attribute.startswith('__') and not attribute.endswith('__'):
@@ -104,7 +105,7 @@ class IntegrationController:
             return key == SuccessToken.value
 
     def __save_status_to_redis__(self, status_code: str) -> None:
-        if self.__is_status_code_correct__(status_code):
+        if self.is_status_correct(status_code):
             self.redis.set(name=StatusCodes.key_name, value=status_code)
             self.status = status_code
 
@@ -119,7 +120,7 @@ class IntegrationController:
         else:
             raise IOError(Exceptions.wrong_token)
 
-    def start(self) -> None:
+    def request(self) -> None:
         if self.status == StatusCodes.connection_to_1C_server:
             json = {
                 SuccessToken.json_key: SuccessToken.value,
@@ -141,4 +142,4 @@ class IntegrationController:
 
 
 if __name__ == '__main__':
-    IntegrationController(hot_start=True)
+    print(IntegrationController())
