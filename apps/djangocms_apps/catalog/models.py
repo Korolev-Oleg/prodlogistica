@@ -1,4 +1,3 @@
-from cms.models.pluginmodel import CMSPlugin
 from cms.models.fields import models
 
 
