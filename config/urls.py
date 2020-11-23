@@ -9,53 +9,50 @@ from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.urls import include
-from django.utils.functional import curry
+
+# from django.utils.functional import curry
 from django.views.defaults import (server_error, page_not_found,
                                    permission_denied)
 from django.views.static import serve
 
 from apps.robots.views import robots
-from  apps.protected_static.views import protected_static
+from apps.protected_static.views import protected_static
 
 admin.autodiscover()
 
+# TODO enable errors handling on this line
 # ERRORS HANDLING
-handler400 = curry(
-    page_not_found,
-    exception=Exception('Page not Found'),
-    template_name='errs/400.html'
-)
-
-handler403 = curry(
-    permission_denied,
-    exception=Exception('Permission Denied'),
-    template_name='errs/403.html'
-)
-
-handler404 = curry(
-    page_not_found,
-    exception=Exception('Page not Found'),
-    template_name='errs/404.html'
-)
-
-handler500 = curry(
-    server_error,
-    exception=Exception('Page not Found'),
-    template_name='errs/500.html'
-)
+# handler400 = curry(
+#     page_not_found,
+#     exception=Exception('Page not Found'),
+#     template_name='errs/400.html'
+# )
+#
+# handler403 = curry(
+#     permission_denied,
+#     exception=Exception('Permission Denied'),
+#     template_name='errs/403.html'
+# )
+#
+# handler404 = curry(
+#     page_not_found,
+#     exception=Exception('Page not Found'),
+#     template_name='errs/404.html'
+# )
+#
+# handler500 = curry(
+#     server_error,
+#     exception=Exception('Page not Found'),
+#     template_name='errs/500.html'
+# )
 
 urlpatterns = [
-    url(r'^sitemap\.xml/$', sitemap,
-        {'sitemaps': {'cmspages': CMSSitemap}}),
+    url(r'^sitemap\.xml/$', sitemap, {'sitemaps': {'cmspages': CMSSitemap}}),
     url(r'^robots.txt/$', robots),
     url(r'^ru/static/', protected_static, name="protected_static"),
-
-
-    url(r'^media/(?P<path>.*)$', serve,
-        {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}),
+    url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}),
     url(r'', include('django.contrib.staticfiles.urls')),
-
-    url(r'^404$', handler404),
+    # url(r'^404$', handler404),
 ]
 
 urlpatterns += i18n_patterns(
@@ -66,7 +63,7 @@ urlpatterns += i18n_patterns(
 # This is only needed when using runserver.
 if settings.DEBUG:
     urlpatterns = [
-        url(r'^media/(?P<path>.*)$', serve,
-            {'document_root': settings.MEDIA_ROOT,
-            'show_indexes': True}),
-        ] + staticfiles_urlpatterns() + urlpatterns
+                      url(r'^media/(?P<path>.*)$', serve,
+                          {'document_root': settings.MEDIA_ROOT,
+                           'show_indexes': True}),
+                  ] + staticfiles_urlpatterns() + urlpatterns

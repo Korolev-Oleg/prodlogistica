@@ -2,6 +2,7 @@
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 from .base import *
+DEBUG = False
 
 SECRET_KEY = '1tv^5t_81mo3#b%=)+c_07gvt1_c1io0(yto%t$s=9s#!z-asd'
 

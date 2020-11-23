@@ -1,7 +1,6 @@
 from django.db import models
 
 
-# Create your models here.
 class Contacts(models.Model):
     address = models.CharField(max_length=256, verbose_name='Адрес компании')
     phone = models.CharField(max_length=100, verbose_name='Телефон')
