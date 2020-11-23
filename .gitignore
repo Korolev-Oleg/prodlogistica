@@ -20,3 +20,6 @@ package-lock.json
 ./static/
 /static/
 *.pyc
+
+# django media
+media/
