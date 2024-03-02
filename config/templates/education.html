@@ -15,6 +15,10 @@
       color: #333;
     }
 
+    .call-us-course {
+     margin-bottom: 35px;
+    }
+
     p {
       color: #666;
     }
@@ -48,13 +52,27 @@
     .stipend-details h3 {
       color: #0088cc;
     }
+    .back-box{
+      background: rgba(0,199,48,0.27);
+      position: absolute;
+    }
+    .header-image>img {
+      max-height: 300px;
+      @media (max-width: 1200px) {
+        max-width: 86vw;
+      }
+    }
   </style>
 {% endblock %}
 
 {% block content %}
   <div class="container">
     <div class="course-details">
-      <h1>Курс "Менеджер по привлечению клиентов"</h1>
+      <div class="header-image">
+        <div class="back-box"></div>
+        <img src="{{ STATIC_URL }}img/manager.png" alt="">
+        <h1>Курс "Менеджер по привлечению клиентов"</h1>
+      </div>
       <ul>
         <li>- Изучение основных техник продаж и юридических особенностей сделок</li>
         <li>- Проработка техники речи, управление эмоциями и мотивацией</li>
@@ -149,6 +167,7 @@
         <li>- Также компания выплачивает бонусы за привлечение нового клиента в размере 5 000 руб.</li>
       </ul>
     </div>
+    <a href="tel:+7 495 212-20-80" class="btn-feed call-us-course">Позвоните нам</a>
   </div>
 {% endblock %}
 
