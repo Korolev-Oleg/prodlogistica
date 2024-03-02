@@ -1,3 +1,4 @@
+psycopg2-binary==2.9.9
 amqp==2.6.1
 backcall==0.1.0
 billiard==3.6.3.0
@@ -43,9 +44,8 @@ kombu==4.6.11
 parso==0.7.0
 pexpect==4.8.0
 pickleshare==0.7.5
-Pillow==7.1.1
+Pillow==8.0.0
 prompt-toolkit==3.0.5
-psycopg2==2.8.5
 ptyprocess==0.6.0
 Pygments==2.6.1
 pyjade==4.0.0

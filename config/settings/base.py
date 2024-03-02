@@ -209,6 +209,7 @@ CMS_TEMPLATES = (
     ('contacts.html', 'Контакты'),
     ('news.html', 'Новости'),
     ('service.html', 'Услуги'),
+    ('education.html', 'Обучение'),
 )
 
 CMS_PERMISSION = True
