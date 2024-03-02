@@ -50,10 +50,15 @@ urlpatterns = [
     url(r'^sitemap\.xml/$', sitemap, {'sitemaps': {'cmspages': CMSSitemap}}),
     url(r'^robots.txt/$', robots),
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
     url(r'^media/(?P<path>.*)$', serve,
         {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}),
+=======
+    url(r'^ru/static/', protected_static, name="protected_static"),
+    url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}),
+>>>>>>> 32ef66c86bb108fdaead994d7e0d492837b7805b
 =======
     url(r'^ru/static/', protected_static, name="protected_static"),
     url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}),
