@@ -23,16 +23,21 @@ def sort(vacancies: dict) -> None:
                 _sorted = False
 
 
+def clean_old_tasks():
+    Vacancies.objects.all().delete()
+    
+
 @app.task
 def update_vacancies() -> None:
     """ task updating vacancies from HeadHunter """
     response = get('https://api.hh.ru/vacancies?employer_id=649480')
     vacancies = response.json()['items']
     sort(vacancies)
+    clean_old_tasks()
 
     for vacancy in vacancies:
         new_vacancy = Vacancies()
-        new_vacancy.title = vacancy['name']
+        new_vacancy.title = vacancy['name'][:69]
         new_vacancy.description = vacancy['snippet']['responsibility']
         new_vacancy.published = datetime.strptime(vacancy['published_at'], "%Y-%m-%dT%H:%M:%S+%f")
         new_vacancy.url = vacancy['alternate_url']
